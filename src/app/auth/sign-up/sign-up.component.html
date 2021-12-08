@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="registerDiv">
+        <form [formGroup]="registerForm">
+            <div class="row justify-content-center">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="First Name" formControlName="first_name" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Last Name" formControlName="last_name" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Email" formControlName="email" />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" formControlName="password" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Phone Number" formControlName="phone_number" />
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" formControlName="admin" /> Admin
+                </div>
+
+                <div class="btn-div">
+                    <div class="row mb-3">
+                        <div class="col-md-12 text-center">
+                            <button style="height: 40px;" (click)="register()" class="btn">SIgn Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

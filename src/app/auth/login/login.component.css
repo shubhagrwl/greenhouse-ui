@@ -1,0 +1,25 @@
+.btn{
+    margin-right: 20px;
+    padding: 0px;
+    width: 80px;
+    color: black;
+    border: 1px solid;
+}
+
+.form-group{
+    margin: 15px;
+}
+.container {
+    font-family: arial;
+    font-size: 24px;
+    width: 350px;
+    height: 200px;
+    margin: auto; 
+    position: relative;
+}
+.loginDiv{
+  position: absolute;
+  top: 100%;
+  margin: -25px 0 0 -25px;
+}
+  

@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="div">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <button type="button" class="form-control btn-height" (click)="onClickReport()">Nashua Waste Report</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input type="button" class="form-control btn-height" value="Stock Check All Order">
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label>From</label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="date" class="form-control" value="Change time for date update">
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label>To</label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="date" class="form-control" value="Change time for date update">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-2">
+                <label>SALES STATUS</label>
+            </div>
+            <div class="col-md-3">
+                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." />
+                Estimating<br>
+                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." />
+                Estimated<br>
+                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." />
+                Ordering<br>
+                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." />
+                Ordered<br>
+                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." />
+                Backrdering
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input type="button" class="form-control btn-height" value="Ageing Inventory">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>HOME DELIVERY (HD) + <br>
+                        Guaranteed shift life</label>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <select title="Pick a number" class="selectpicker">
+                        <option>Select...</option>
+                        <option>One</option>
+                        <option>Two</option>
+                        <option>Three</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="reportFlag" style="margin-top: 40px;" class="div">
+        <app-report></app-report>
+    </div>
+</div>

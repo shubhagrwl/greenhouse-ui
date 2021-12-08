@@ -1,0 +1,94 @@
+<div class="container">
+    <h5>The Date Updater program automatically updates the "Required By" Date in Dear Inventory to match the Delivery
+        Date entered by the customer in shopify. This program runs always, and updates every 5 minuts. use this option
+        only if there are issue. </h5>
+    <form (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input type="button" class="form-control btn-height" value="View log of updated orders">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <button type="button" class="form-control btn-height" (click)="onDateUpdate($event)" >View time for date update</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input type="button" class="form-control btn-height" value="Change time for date update" (click)="onDateChange($event)">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <mat-form-field>
+                        <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date"
+                            [(ngModel)]="dateInterface.datepicker" name="datepicker" [min]="minDate" [max]="maxDate" [disabled]="disabled">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <ngx-mat-datetime-picker #picker [showSpinners]="showSpinners" [showSeconds]="showSeconds"
+                            [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond"
+                            [touchUi]="touchUi" [color]="color" [enableMeridian]="enableMeridian"
+                            [disableMinute]="disableMinute" [hideTime]="hideTime">
+                        </ngx-mat-datetime-picker>
+                    </mat-form-field>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <button type="button" class="form-control btn-height" (click)="onStatus($event)"
+                        value="status">Confirm program is running</button>
+                </div>
+            </div>
+            <div class="col-md-2" *ngIf="status">
+                <div *ngIf="programContinueFlag" class="form-group">
+                    <div class="spinner-grow text-success" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                    <div class="spinner-grow text-success" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                    <div class="spinner-grow text-success" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+                <div *ngIf="!programContinueFlag" class="form-group">
+                    <div class="spinner-grow text-danger" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                    <div class="spinner-grow text-danger" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                    <div class="spinner-grow text-danger" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <button type="button" class="form-control btn-height" (click)="onStop($event)" value="stop">Stop
+                        the program</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <button type="button" [disabled]="startFlagDisable" class="form-control btn-height" value="start" (click)="onStart($event)"
+                        value="start">Start the program</button>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div *ngIf="programStartFlag" class="form-group">
+                    <div class="spinner-border text-success" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
