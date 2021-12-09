@@ -18,6 +18,7 @@ const routes: Routes = [
       { path: 'order', component: OrderComponent },
       { path: 'date', component: DateUpdateComponent },
       { path: 'signup', component: SignUpComponent },
+      { path: 'stock', component: StockComponent },
       { path: '', component: StockComponent },
     ]
   },

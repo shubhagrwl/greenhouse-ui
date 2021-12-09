@@ -15,6 +15,7 @@ export class ReportComponent implements OnInit {
   dateInterface = new DateUpdate('', '', '', '');
   gridApi: GridApi;
   historyFlag = false;
+  downloadData;
   constructor(private apiService: ApiService, private papa: Papa
   ) { }
 
@@ -44,6 +45,7 @@ export class ReportComponent implements OnInit {
       param = param.append("order", 'name');
       this.apiService.wasteRepost(param).subscribe((data: any) => {
         console.log(data);
+        this.downloadData = data.data.report;
         params.successCallback(
           data.data.report,
           700
@@ -123,7 +125,7 @@ export class ReportComponent implements OnInit {
   }
 
   download() {
-    var csv = this.papa.unparse(this.rowData);
+    var csv = this.papa.unparse(this.downloadData);
     var csvData = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     var csvURL = window.URL.createObjectURL(csvData);
     var tempLink = document.createElement('a');
