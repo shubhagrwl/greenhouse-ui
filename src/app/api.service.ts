@@ -68,14 +68,43 @@ export class ApiService {
   }
 
   wasteRepostHistory(params) {
-    return this.httpClient.get(`${this.BASE_URL}/waste/report/history?range=100`, {
-      headers: headerOption.headers,
-      params: params,
-    });
+    return this.httpClient.get(
+      `${this.BASE_URL}/waste/report/history?range=100`,
+      {
+        headers: headerOption.headers,
+        params: params,
+      }
+    );
   }
   wasteRepostRefresh() {
     return this.httpClient.get(`${this.BASE_URL}/waste/report/refresh`, {
       headers: headerOption.headers,
+    });
+  }
+
+  wasteRepostDownload() {
+    return this.httpClient.get(`${this.BASE_URL}/waste/report/download`, {
+      headers: headerOption.headers,
+    });
+  }
+
+  getAllUsers() {
+    return this.httpClient.get(`${this.BASE_URL}/users`, {
+      headers: headerOption.headers,
+    });
+  }
+
+  userUpdate(params) {
+    return this.httpClient.post(
+      `${this.BASE_URL}/user?${params}`,
+      params,
+      headerOption
+    );
+  }
+  deleteUser(params) {
+    return this.httpClient.delete(`${this.BASE_URL}/user`, {
+      headers: headerOption.headers,
+      params: params,
     });
   }
 }

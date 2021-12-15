@@ -5,8 +5,9 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LayoutComponent } from './layout/layout.component';
 import { DateUpdateComponent } from './order/date-update/date-update.component';
 import { OrderComponent } from './order/order/order.component';
-import { ReportComponent } from './order/report/report.component';
 import { StockComponent } from './order/stock/stock.component';
+import { UserUpdateComponent } from './order/user-update/user-update.component';
+import { UserComponent } from './order/user/user.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,9 @@ const routes: Routes = [
       { path: 'order', component: OrderComponent },
       { path: 'date', component: DateUpdateComponent },
       { path: 'signup', component: SignUpComponent },
+      { path: 'user', component: UserComponent },
       { path: 'stock', component: StockComponent },
+      { path: 'user/update', component: UserUpdateComponent },
       { path: '', component: StockComponent },
     ]
   },

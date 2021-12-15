@@ -21,7 +21,9 @@ export class ReportComponent implements OnInit {
   gridApi: GridApi;
   historyFlag = false;
   downloadData;
-  constructor(private apiService: ApiService, private papa: Papa) {}
+  loaderFlag = false;
+  pageNo = 1
+  constructor(private apiService: ApiService, private papa: Papa) { }
 
   gridOptions: GridOptions = {
     pagination: true,
@@ -30,25 +32,19 @@ export class ReportComponent implements OnInit {
     paginationPageSize: 100,
   };
 
-  page = {
-    100: 1,
-    200: 2,
-    300: 3,
-    400: 4,
-    500: 5,
-    600: 6,
-    700: 7,
-  };
-
   dataSource: IDatasource = {
     getRows: (params: IGetRowsParams) => {
+      if (this.gridOptions.paginationPageSize != undefined) {
+        this.pageNo = params.startRow / this.gridOptions.paginationPageSize + 1;
+      }
       let param = new HttpParams();
-      param = param.append("page", this.page[params.endRow].toString());
-      param = param.append("range", params.endRow.toString());
+      param = param.append("page", this.pageNo.toString());
       param = param.append("sort", "ASC");
       param = param.append("order", "name");
+      this.loaderFlag = true;
       this.apiService.wasteRepost(param).subscribe(
         (data: any) => {
+          this.loaderFlag = false;
           console.log(data);
           this.downloadData = data.data.report;
           params.successCallback(data.data.report, data.data.pagination.total);
@@ -63,13 +59,18 @@ export class ReportComponent implements OnInit {
 
   dataSourceHistory: IDatasource = {
     getRows: (params: IGetRowsParams) => {
+      if (this.gridOptions.paginationPageSize != undefined) {
+        this.pageNo = params.startRow / this.gridOptions.paginationPageSize + 1;
+      }
       let param = new HttpParams();
-      param = param.append("page", this.page[params.endRow].toString());
+      param = param.append("page", this.pageNo.toString());
       param = param.append("sort", "ASC");
       param = param.append("order", "name");
+      this.loaderFlag = true;
       this.apiService.wasteRepostHistory(param).subscribe(
         (data: any) => {
           console.log(data);
+          this.loaderFlag = false;
           params.successCallback(data.data.report, data.data.pagination.total);
           this.dateInterface.datepicker = data.data.last_running_time;
         },
@@ -111,31 +112,19 @@ export class ReportComponent implements OnInit {
     this.gridApi.setDatasource(this.dataSource);
   }
 
-  report() {
-    let params = new HttpParams();
-    params = params.append("page", "1");
-    params = params.append("sort", "ASC");
-    params = params.append("order", "name");
-    this.apiService.wasteRepost(params).subscribe(
-      (data: any) => {
-        this.rowData = 100;
-        this.dateInterface.datepicker = data.data.last_running_time;
-        console.log(data);
-      },
-      (err) => {
-        this.apiService.openSnackBar(err.error.data.message, "Close");
-      }
-    );
-  }
-
   download() {
-    var csv = this.papa.unparse(this.downloadData);
-    var csvData = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-    var csvURL = window.URL.createObjectURL(csvData);
-    var tempLink = document.createElement("a");
-    tempLink.href = csvURL;
-    tempLink.setAttribute("download", "report" + ".csv");
-    tempLink.click();
+    this.apiService.wasteRepostDownload().subscribe(data => {
+      console.log(data)
+    }, err => {
+      this.apiService.openSnackBar(err.error.data.message, "Close");
+    })
+    // var csv = this.papa.unparse(this.downloadData);
+    // var csvData = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    // var csvURL = window.URL.createObjectURL(csvData);
+    // var tempLink = document.createElement("a");
+    // tempLink.href = csvURL;
+    // tempLink.setAttribute("download", "report" + ".csv");
+    // tempLink.click();
   }
 
   history() {

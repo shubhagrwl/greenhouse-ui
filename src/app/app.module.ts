@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { OrderComponent } from './order/order/order.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatFormFieldModule, MatInputModule, MatNativeDateModule, MatSnackBarModule } from '@angular/material';
+import { MatDialogModule, MatFormFieldModule, MatInputModule, MatNativeDateModule, MatSnackBarModule } from '@angular/material';
 import { StockComponent } from './order/stock/stock.component';
 import { DateUpdateComponent } from './order/date-update/date-update.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -19,6 +19,9 @@ import { NgxMatDatetimePickerModule, NgxMatNativeDateModule, NgxMatTimepickerMod
 import { ReportComponent } from './order/report/report.component';
 import { AgGridModule } from 'ag-grid-angular';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { UserComponent } from './order/user/user.component';
+import { ButtonRendererComponent } from './order/user/button-render.component';
+import { UserUpdateComponent } from './order/user-update/user-update.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +33,16 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     OrderComponent,
     HeaderComponent,
     ReportComponent,
+    UserComponent,
+    ButtonRendererComponent,
+    UserUpdateComponent,
     LayoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatDatepickerModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
     MatNativeDateModule,
@@ -48,7 +55,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatDatepickerModule,
     MatProgressSpinnerModule,
     NgxMatNativeDateModule,
-    AgGridModule.withComponents([]),
+    AgGridModule.withComponents([ButtonRendererComponent]),
     BrowserAnimationsModule
   ],
   providers: [],

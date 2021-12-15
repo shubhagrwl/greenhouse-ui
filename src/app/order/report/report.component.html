@@ -1,4 +1,5 @@
 <div class="container">
+    <div *ngIf="loaderFlag" class="loader"></div>
 
     <div class="row">
         <div class="col-md-3">
@@ -24,9 +25,8 @@
                 <button class="btn btn-primary" (click)="refresh()">Refresh</button>
             </div>
         </div>
-        
-    </div>
 
+    </div>
     <ag-grid-angular [gridOptions]="gridOptions" style="width: 100%; height: 650px;" (gridReady)="onGridReady($event)"
         class="ag-theme-alpine" [columnDefs]="columnDefs" [rowData]="rowData">
     </ag-grid-angular>
