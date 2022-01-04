@@ -8,6 +8,7 @@ import { OrderComponent } from './order/order/order.component';
 import { StockComponent } from './order/stock/stock.component';
 import { UserUpdateComponent } from './order/user-update/user-update.component';
 import { UserComponent } from './order/user/user.component';
+import { AuthGuard } from './services/auth.guard';
 
 
 const routes: Routes = [
@@ -16,15 +17,16 @@ const routes: Routes = [
     path: 'main',
     component: LayoutComponent,
     children: [
-      { path: 'order', component: OrderComponent },
-      { path: 'date', component: DateUpdateComponent },
+      { path: 'order', component: OrderComponent, canActivate: [AuthGuard] },
+      { path: 'date', component: DateUpdateComponent, canActivate: [AuthGuard] },
       { path: 'signup', component: SignUpComponent },
-      { path: 'user', component: UserComponent },
-      { path: 'stock', component: StockComponent },
-      { path: 'user/update', component: UserUpdateComponent },
-      { path: '', component: StockComponent },
+      { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
+      { path: 'stock', component: StockComponent, canActivate: [AuthGuard] },
+      { path: 'user/update', component: UserUpdateComponent, canActivate: [AuthGuard] },
+      { path: '', component: StockComponent, canActivate: [AuthGuard] },
     ]
   },
+
   { path: '', component: LoginComponent },
 ];
 

@@ -1,9 +1,32 @@
-
 <div style="height: 70px; text-align: center;">
-    <h1>LOGO</h1>
+    <img style="height: 70px; width: 50px;"
+        src="https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719" alt="">
 </div>
 
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="stock">Stock</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="order">Order</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="date">Date</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="user">Users</a>
+            </li>
+        </ul>
+        <div class="d-flex">
+            <a (click)="logout()"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </div>
+</nav>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -18,7 +41,9 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink="user">Users</a>
             </li>
-            
+            <li class="nav-item">
+                <a class="right"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
         </ul>
     </div>
-</nav>
+</nav> -->

@@ -22,6 +22,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { UserComponent } from './order/user/user.component';
 import { ButtonRendererComponent } from './order/user/button-render.component';
 import { UserUpdateComponent } from './order/user-update/user-update.component';
+import { StockTableComponent } from './order/stock-table/stock-table.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { UserUpdateComponent } from './order/user-update/user-update.component';
     UserComponent,
     ButtonRendererComponent,
     UserUpdateComponent,
+    StockTableComponent,
     LayoutComponent
   ],
   imports: [

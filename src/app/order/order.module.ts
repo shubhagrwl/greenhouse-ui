@@ -6,11 +6,12 @@ import { DateUpdateComponent } from './date-update/date-update.component';
 import { ReportComponent } from './report/report.component';
 import { UserComponent } from './user/user.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
+import { StockTableComponent } from './stock-table/stock-table.component';
 
 
 
 @NgModule({
-  declarations: [OrderComponent, StockComponent, DateUpdateComponent, ReportComponent, UserComponent, UserUpdateComponent],
+  declarations: [OrderComponent, StockComponent, DateUpdateComponent, ReportComponent, UserComponent, UserUpdateComponent, StockTableComponent],
   imports: [
     CommonModule
   ]

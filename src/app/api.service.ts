@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material";
 import { environment } from "src/environments/environment";
+import { map } from 'rxjs/operators';
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
@@ -23,7 +24,7 @@ export class ApiService {
   constructor(
     private httpClient: HttpClient,
     public matSnackBar: MatSnackBar
-  ) {}
+  ) { }
 
   openSnackBar(message: string, action: string) {
     this.matSnackBar.open(message, action ? action : undefined, {
@@ -68,13 +69,10 @@ export class ApiService {
   }
 
   wasteRepostHistory(params) {
-    return this.httpClient.get(
-      `${this.BASE_URL}/waste/report/history?range=100`,
-      {
-        headers: headerOption.headers,
-        params: params,
-      }
-    );
+    return this.httpClient.get(`${this.BASE_URL}/waste/report/history?range=100`, {
+      headers: headerOption.headers,
+      params: params,
+    });
   }
   wasteRepostRefresh() {
     return this.httpClient.get(`${this.BASE_URL}/waste/report/refresh`, {
@@ -82,10 +80,25 @@ export class ApiService {
     });
   }
 
-  wasteRepostDownload() {
-    return this.httpClient.get(`${this.BASE_URL}/waste/report/download`, {
-      headers: headerOption.headers,
-    });
+  async wasteRepostDownload(url, success) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`);
+    xhr.responseType = "blob";
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4) {
+        if (success) {
+          var blob = new Blob([this.response], { type: 'application/vnd.ms-excel' });
+          var downloadUrl = URL.createObjectURL(blob);
+          var a = document.createElement("a");
+          a.href = downloadUrl;
+          a.download = "data.xls";
+          document.body.appendChild(a);
+          a.click();
+        };
+      }
+    };
+    xhr.send(null);
   }
 
   getAllUsers() {
@@ -94,9 +107,17 @@ export class ApiService {
     });
   }
 
+  getStock(params) {
+    return this.httpClient.get(`${this.BASE_URL}/stock`, {
+      headers: headerOption.headers,
+      params: params,
+    });
+  }
+
+
   userUpdate(params) {
     return this.httpClient.post(
-      `${this.BASE_URL}/user?${params}`,
+      `${this.BASE_URL}/user`,
       params,
       headerOption
     );

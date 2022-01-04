@@ -1,0 +1,26 @@
+<div class="container">
+
+    <div style="margin-bottom: 20px;" class="row">
+        <div class="col-md-6">
+
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="insufficientStock()">Insufficient Stock</button>
+                <button class="btn btn-primary" (click)="stockLeft()">Stock Left</button>
+            </div>
+        </div>
+
+    </div>
+    <div *ngIf="insufficientFlag">
+        <ag-grid-angular [gridOptions]="gridOptions" style="width: 100%; height: 650px;"
+            (gridReady)="onGridReady($event)" class="ag-theme-alpine" [columnDefs]="columnDefs" [rowData]="rowData">
+        </ag-grid-angular>
+    </div>
+    <div *ngIf="leftFlag">
+        <ag-grid-angular [gridOptions]="gridOptions" style="width: 100%; height: 650px;"
+            (gridReady)="onGridReady($event)" class="ag-theme-alpine" [columnDefs]="columnDefs1" [rowData]="rowData1">
+        </ag-grid-angular>
+    </div>
+</div>

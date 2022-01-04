@@ -1,9 +1,12 @@
 <div class="container">
+    <div *ngIf="loaderFlag" class="loader"></div>
+
     <div class="div">
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <button type="button" class="form-control btn-height" (click)="onClickReport()">Nashua Waste Report</button>
+                    <button type="button" class="form-control btn-height" (click)="onClickReport()">Nashua Waste
+                        Report</button>
                 </div>
             </div>
 
@@ -11,7 +14,8 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <input type="button" class="form-control btn-height" value="Stock Check All Order">
+                    <button type="button" class="form-control btn-height" (click)="stockCheck()" value="status">Stock
+                        Check All Order</button>
                 </div>
             </div>
             <div class="col-md-1">
@@ -21,7 +25,17 @@
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <input type="date" class="form-control" value="Change time for date update">
+                    <mat-form-field>
+                        <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date"
+                            [(ngModel)]="fromDate" name="fromDate" [min]="minDate" [max]="maxDate"
+                            [disabled]="disabled">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <ngx-mat-datetime-picker #picker [showSpinners]="showSpinners" [showSeconds]="showSeconds"
+                            [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond"
+                            [touchUi]="touchUi" [color]="color" [enableMeridian]="enableMeridian"
+                            [disableMinute]="disableMinute" [hideTime]="hideTime">
+                        </ngx-mat-datetime-picker>
+                    </mat-form-field>
                 </div>
             </div>
             <div class="col-md-1">
@@ -31,7 +45,16 @@
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <input type="date" class="form-control" value="Change time for date update">
+                    <mat-form-field>
+                        <input matInput [ngxMatDatetimePicker]="picker1" placeholder="Choose a date"
+                            [(ngModel)]="toDate" name="toDate" [min]="minDate" [max]="maxDate" [disabled]="disabled">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <ngx-mat-datetime-picker #picker1 [showSpinners]="showSpinners" [showSeconds]="showSeconds"
+                            [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond"
+                            [touchUi]="touchUi" [color]="color" [enableMeridian]="enableMeridian"
+                            [disableMinute]="disableMinute" [hideTime]="hideTime">
+                        </ngx-mat-datetime-picker>
+                    </mat-form-field>
                 </div>
             </div>
         </div>
@@ -42,15 +65,20 @@
                 <label>SALES STATUS</label>
             </div>
             <div class="col-md-3">
-                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." />
+                <input class="radio" type="checkbox" value="ESTIMATING" (click)="onCheckboxClick($event)"
+                    name="saleStatus" />
                 Estimating<br>
-                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." />
+                <input class="radio" type="checkbox" value="ESTIMATED" (click)="onCheckboxClick($event)"
+                    name="saleStatus" />
                 Estimated<br>
-                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." />
+                <input class="radio" type="checkbox" value="ORDERING" (click)="onCheckboxClick($event)"
+                    name="saleStatus" />
                 Ordering<br>
-                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." />
+                <input class="radio" type="checkbox" value="ORDERED" (click)="onCheckboxClick($event)"
+                    name="saleStatus" />
                 Ordered<br>
-                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." />
+                <input class="radio" type="checkbox" value="BACKORDERING" (click)="onCheckboxClick($event)"
+                    name="saleStatus" />
                 Backrdering
             </div>
         </div>
@@ -80,5 +108,8 @@
     </div>
     <div *ngIf="reportFlag" style="margin-top: 40px;" class="div">
         <app-report></app-report>
+    </div>
+    <div *ngIf="stockFlag" style="margin-top: 40px;" class="div">
+        <app-stock-table [stockTable]=stock></app-stock-table>
     </div>
 </div>

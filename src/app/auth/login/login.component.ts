@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['main'], { relativeTo: this.activatedRoute.parent });
     }, (err) => {
       console.log(err)
+      localStorage.setItem('token', null);
     })
   }
 

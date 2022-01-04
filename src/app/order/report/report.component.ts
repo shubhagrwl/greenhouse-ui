@@ -3,12 +3,16 @@ import { Component, OnInit } from "@angular/core";
 import { ApiService } from "src/app/api.service";
 import { DateUpdate } from "src/app/interface";
 import { Papa } from "ngx-papaparse";
+
+
 import {
   GridApi,
   GridOptions,
   IDatasource,
   IGetRowsParams,
 } from "ag-grid-community";
+import { Route } from "@angular/compiler/src/core";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-report",
@@ -21,9 +25,10 @@ export class ReportComponent implements OnInit {
   gridApi: GridApi;
   historyFlag = false;
   downloadData;
+  blob;
   loaderFlag = false;
   pageNo = 1
-  constructor(private apiService: ApiService, private papa: Papa) { }
+  constructor(private apiService: ApiService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   gridOptions: GridOptions = {
     pagination: true,
@@ -84,21 +89,30 @@ export class ReportComponent implements OnInit {
     {
       headerName: "Id",
       field: "id",
-      width: 200,
+      cellRenderer: function (params) {
+        //return '<a href="/bank/HDFC-Bank/accounts/landingpage">' + params.value + '</a>'
+        return (
+          '<a href="https://inventory.dearsystems.com/Product#' +
+          params.value +
+          '" target="_blank">' +
+          params.value +
+          "</a>"
+        );
+      },
     },
-    { headerName: "name", field: "name", width: 200 },
-    { headerName: "Barcode", field: "barcode", width: 200 },
-    { headerName: "allocated", field: "allocated", width: 200 },
-    { headerName: "available", field: "available", width: 200 },
-    { headerName: "batch", field: "batch", width: 200 },
-    { headerName: "bin", field: "bin", width: 200 },
-    { headerName: "location", field: "location", width: 200 },
-    { headerName: "on_hand", field: "on_hand", width: 200 },
-    { headerName: "on_order", field: "on_order", width: 200 },
-    { headerName: "sku", field: "sku", width: 200 },
-    { headerName: "stock_on_hand", field: "stock_on_hand", width: 200 },
-    { headerName: "created_at", field: "created_at", width: 200 },
-    { headerName: "expiry_date", field: "expiry_date", width: 200 },
+    { headerName: "name", field: "name" },
+    { headerName: "Barcode", field: "barcode" },
+    { headerName: "allocated", field: "allocated" },
+    { headerName: "available", field: "available" },
+    { headerName: "batch", field: "batch" },
+    { headerName: "bin", field: "bin" },
+    { headerName: "location", field: "location" },
+    { headerName: "on_hand", field: "on_hand" },
+    { headerName: "on_order", field: "on_order" },
+    { headerName: "sku", field: "sku" },
+    { headerName: "stock_on_hand", field: "stock_on_hand" },
+    { headerName: "created_at", field: "created_at" },
+    { headerName: "expiry_date", field: "expiry_date" },
   ];
 
   rowData;
@@ -113,19 +127,14 @@ export class ReportComponent implements OnInit {
   }
 
   download() {
-    this.apiService.wasteRepostDownload().subscribe(data => {
-      console.log(data)
-    }, err => {
-      this.apiService.openSnackBar(err.error.data.message, "Close");
-    })
-    // var csv = this.papa.unparse(this.downloadData);
-    // var csvData = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-    // var csvURL = window.URL.createObjectURL(csvData);
-    // var tempLink = document.createElement("a");
-    // tempLink.href = csvURL;
-    // tempLink.setAttribute("download", "report" + ".csv");
-    // tempLink.click();
+    var win: any = window.open('_blank');
+    this.apiService.wasteRepostDownload('http://144.126.150.47:9090/waste/report/download', function (blob) {
+      var url = URL.createObjectURL(blob);
+      win.location = url;
+    });
+
   }
+
 
   history() {
     this.gridApi.setDatasource(this.dataSourceHistory);
