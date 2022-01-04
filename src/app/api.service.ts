@@ -24,7 +24,7 @@ export class ApiService {
   constructor(
     private httpClient: HttpClient,
     public matSnackBar: MatSnackBar
-  ) { }
+  ) {}
 
   openSnackBar(message: string, action: string) {
     this.matSnackBar.open(message, action ? action : undefined, {
