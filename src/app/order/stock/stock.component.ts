@@ -7,12 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StockComponent implements OnInit {
   reportFlag = false;
+  fromDate;
+  toDate;
   constructor() { }
 
   ngOnInit() {
+    
   }
 
   onClickReport() {
     this.reportFlag = true
+  }
+
+  stockCheck() {
+    let fromD = new Date(this.fromDate).toISOString().replace(".000Z", "Z");
+    let toD = new Date(this.toDate).toISOString().replace(".000Z", "Z");
+
   }
 }

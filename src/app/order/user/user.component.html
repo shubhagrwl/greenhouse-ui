@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="div">
+
+        <div style="margin: 10px 0px 10px 0px;" class="text-right">
+            <button (click)="openResgister()">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div>
+            <ag-grid-angular #agGrid style="width: 100%; height: 400px" class="ag-theme-alpine" [rowData]="rowData"
+                [columnDefs]="columnDefs" [defaultColDef]="defaultColDef" (onGridReady)="onGridReady($event)"
+                [pagination]="false" [suppressCellSelection]="true" [paginationPageSize]="paginationPageSize"
+                [frameworkComponents]="frameworkComponents" [rowStyle]="rowStyle" [getRowStyle]="getRowStyle">
+            </ag-grid-angular>
+        </div>
+
+    </div>
+
+</div>

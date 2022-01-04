@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="registerDiv">
+        <form [formGroup]="userUpdateForm">
+            <div class="row justify-content-center">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Password" formControlName="password" />
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" formControlName="admin" /> Admin
+                </div>
+
+                <div class="btn-div">
+                    <div class="row mb-3">
+                        <div class="col-md-12 text-center">
+                            <button style="height: 40px;" (click)="update()" class="btn">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

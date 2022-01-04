@@ -1,8 +1,13 @@
-.navbar-collapse {
+.container-fluid {
     background-color: #679f60;
     color: white;
 }
 
 .nav-link{
     color: white !important;
+}
+
+a{
+    cursor: pointer;
+
 }
