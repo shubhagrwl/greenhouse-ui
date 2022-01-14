@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { GridOptions } from 'ag-grid-community';
+import { GridOptions, IDatasource, IGetRowsParams } from 'ag-grid-community';
 import { ApiService } from 'src/app/api.service';
 import { SignUpComponent } from 'src/app/auth/sign-up/sign-up.component';
 import { ButtonRendererComponent } from './button-render.component';
@@ -13,13 +13,20 @@ export class UserComponent implements OnInit {
   frameworkComponents: any;
   api: any;
   gridApi;
-  constructor(private apiService: ApiService, public dialog:MatDialog) {
+  constructor(private apiService: ApiService, public dialog: MatDialog) {
     this.frameworkComponents = {
       btnCellRenderer: ButtonRendererComponent,
     }
   }
+  gridOptions: GridOptions = {
+    pagination: true,
+    rowModelType: "infinite",
+    cacheBlockSize: 100,
+    paginationPageSize: 100,
+  };
   rowData;
   defaultColDef;
+  pageNo = 1;
   columnDefs = [
     {
       headerName: "First Name",
@@ -44,7 +51,7 @@ export class UserComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getUsers();
+    // this.getUsers();
   }
 
 
@@ -58,21 +65,29 @@ export class UserComponent implements OnInit {
       location.reload();
       console.log('The dialog was closed');
     });
-  } 
+  }
 
   onClick() {
   }
-  getUsers() {
-    this.apiService.getAllUsers().subscribe((data: any) => {
-      console.log(data);
-      this.rowData = data.data;
-    }, err => {
-      this.apiService.openSnackBar(err.error.data.message, "Close");
-    })
+  dataSource: IDatasource = {
+    getRows: (params: IGetRowsParams) => {
+      if (this.gridOptions.paginationPageSize != undefined) {
+        this.pageNo = params.startRow / this.gridOptions.paginationPageSize + 1;
+      }
+      this.apiService.getAllUsers().subscribe((data: any) => {
+        console.log(data);
+        this.rowData = data.data;
+        params.successCallback(data.data);
+
+      }, err => {
+        this.apiService.openSnackBar(err.error.data.message, "Close");
+      })
+    }
   }
 
-  onGridReady(params) {
-
-
+  onGridReady(params: any) {
+    this.gridApi = params.api;
+    this.gridApi.setDatasource(this.dataSource);
   }
+
 }

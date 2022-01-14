@@ -1,6 +1,15 @@
-<div style="height: 70px; text-align: center;">
-    <img style="height: 70px; width: 50px;"
-        src="https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719" alt="">
+<div>
+    <div style="height: 70px; text-align: center;">
+        <img style="height: 70px; width: 50px;"
+            src="https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719"
+            alt=""><br>
+        <span>GreenHouse</span><br>
+        <span>Plantit Portal</span>
+    </div>
+    <div style="text-align: right; margin-right: 15px;">
+        <a (click)="logout()">LOG OUT</a><br>
+        <span>{{username}}</span>
+    </div>
 </div>
 
 
@@ -8,21 +17,18 @@
     <div class="container-fluid">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" routerLink="stock">Stock</a>
+                <a class="nav-link" routerLink="stock">STOCK CONTROL</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="order">Order</a>
+                <a class="nav-link" routerLink="order">ORDER PROCESSING</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="date">Date</a>
+                <a class="nav-link" routerLink="date">DATE UPDATER </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="user">Users</a>
+            <li *ngIf="adminFlag" class="nav-item">
+                <a class="nav-link" routerLink="user">ADMIN</a>
             </li>
         </ul>
-        <div class="d-flex">
-            <a (click)="logout()"><i class="fas fa-sign-out-alt"></i></a>
-        </div>
     </div>
 </nav>
 

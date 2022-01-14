@@ -55,6 +55,7 @@ export class ReportComponent implements OnInit {
           this.dateInterface.datepicker = data.data.last_running_time;
         },
         (err) => {
+          this.loaderFlag = false;
           this.apiService.openSnackBar(err.error.data.message, "Close");
         }
       );
@@ -79,6 +80,7 @@ export class ReportComponent implements OnInit {
           this.dateInterface.datepicker = data.data.last_running_time;
         },
         (err) => {
+          this.loaderFlag = false;
           this.apiService.openSnackBar(err.error.data.message, "Close");
         }
       );
@@ -127,7 +129,7 @@ export class ReportComponent implements OnInit {
 
   download() {
     var win: any = window.open('_blank');
-    this.apiService.wasteRepostDownload('http://144.126.150.47:9090/waste/report/download', function (blob) {
+    this.apiService.wasteRepostDownload('https://api.greenhouse.ca/waste/report/download', function (blob) {
       var url = URL.createObjectURL(blob);
       win.location = url;
     });

@@ -13,37 +13,30 @@ export class StockComponent implements OnInit {
   toDate;
   saleStatus;
   stockFlag = false;
-  stock : any;
+  stock: any;
+  progressValue = '0'
   loaderFlag = false;
+  count = 0;
+  status = [{ name: 'ESTIMATING', checked: false },
+  { name: 'ESTIMATED', checked: false },
+  { name: 'ORDERING', checked: false },
+  { name: 'ORDERED', checked: false },
+  { name: 'BACKORDERING', checked: false },
+  { name: 'PICKING', checked: false },
+  ]
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    $("input:checkbox").on('click', function () {
-      // in the handler, 'this' refers to the box clicked on
-      var $box = $(this);
-      if ($box.is(":checked")) {
-        // the name of the box is retrieved using the .attr() method
-        // as it is assumed and expected to be immutable
-        var group = "input:checkbox[name='" + $box.attr("name") + "']";
-        // the checked state of the group/box on the other hand will change
-        // and the current value is retrieved using .prop() method
-        $(group).prop("checked", false);
-        $box.prop("checked", true);
-      } else {
-        $box.prop("checked", false);
-      }
-    });
   }
 
   onClickReport() {
     this.reportFlag = true
   }
 
-  onCheckboxClick(event) {
-    this.saleStatus = event.target.value;
-  }
   stockCheck() {
+    var result = this.status.filter(x => x.checked).map(x => x.name)
+    this.saleStatus = result.join(",")
     if (this.fromDate === undefined || this.toDate === undefined || this.saleStatus === undefined) {
       this.apiService.openSnackBar('Please select From date, To date and status', "Close")
       return;
@@ -52,14 +45,14 @@ export class StockComponent implements OnInit {
       params = params.append("from", new Date(this.fromDate).toISOString().replace(".000Z", "Z"));
       params = params.append("to", new Date(this.toDate).toISOString().replace(".000Z", "Z"));
       params = params.append("status", this.saleStatus);
-      this.loaderFlag = true;
       this.apiService.getStock(params).subscribe((data: any) => {
         if (data) {
-          this.loaderFlag = false;
-          this.stockFlag = true;
-          this.reportFlag = false;
-          this.stock = data;
-          console.log(data);
+          this.apiService.openSnackBar(data.data.message, "Close")
+          console.log("Click ------>", data.data.code);
+          if (data.data.code === 202 || 503) {
+            this.stockFlag = true;
+            this.stockProgress();
+          }
         } else {
           this.apiService.openSnackBar(data.data.message, "Close")
         }
@@ -69,5 +62,19 @@ export class StockComponent implements OnInit {
 
       })
     }
+  }
+
+  stockProgress() {
+    this.apiService.getStockProgress().subscribe((data: any) => {
+      console.log(data);
+      var per = data.data.progress;
+      this.progressValue = per.split('%').join('');
+      if (data.data.progress !== "100%") {
+        setTimeout(() => {
+          this.stockProgress();
+        }, 20000);
+
+      }
+    })
   }
 }

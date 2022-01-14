@@ -23,6 +23,7 @@ import { UserComponent } from './order/user/user.component';
 import { ButtonRendererComponent } from './order/user/button-render.component';
 import { UserUpdateComponent } from './order/user-update/user-update.component';
 import { StockTableComponent } from './order/stock-table/stock-table.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { StockTableComponent } from './order/stock-table/stock-table.component';
     NgxMatDatetimePickerModule, 
     NgxMatTimepickerModule,
     ReactiveFormsModule,
+    MatProgressBarModule,
     MatSnackBarModule,
     MatDatepickerModule,
     MatProgressSpinnerModule,

@@ -7,10 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  username;
+  user;
+  admin;
+  adminFlag = false;
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem("userData"));
+    this.username = this.user.username;
+    this.admin = true; //this.user.admin
+    if (this.admin === true) {
+      this.adminFlag = true;
+    }
   }
 
   logout() {

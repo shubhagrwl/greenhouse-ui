@@ -65,21 +65,10 @@
                 <label>SALES STATUS</label>
             </div>
             <div class="col-md-3">
-                <input class="radio" type="checkbox" value="ESTIMATING" (click)="onCheckboxClick($event)"
-                    name="saleStatus" />
-                Estimating<br>
-                <input class="radio" type="checkbox" value="ESTIMATED" (click)="onCheckboxClick($event)"
-                    name="saleStatus" />
-                Estimated<br>
-                <input class="radio" type="checkbox" value="ORDERING" (click)="onCheckboxClick($event)"
-                    name="saleStatus" />
-                Ordering<br>
-                <input class="radio" type="checkbox" value="ORDERED" (click)="onCheckboxClick($event)"
-                    name="saleStatus" />
-                Ordered<br>
-                <input class="radio" type="checkbox" value="BACKORDERING" (click)="onCheckboxClick($event)"
-                    name="saleStatus" />
-                Backrdering
+                <div *ngFor="let s of status">
+                    <input type="checkbox" [(ngModel)]="s.checked"/>
+                    <label>{{s.name}}</label>
+                  </div>
             </div>
         </div>
         <div class="row">
@@ -109,7 +98,7 @@
     <div *ngIf="reportFlag" style="margin-top: 40px;" class="div">
         <app-report></app-report>
     </div>
-    <div *ngIf="stockFlag" style="margin-top: 40px;" class="div">
-        <app-stock-table [stockTable]=stock></app-stock-table>
+    <div *ngIf="stockFlag">
+        <mat-progress-bar mode="determinate" [value]=progressValue></mat-progress-bar>
     </div>
 </div>

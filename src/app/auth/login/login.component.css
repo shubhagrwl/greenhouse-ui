@@ -23,3 +23,10 @@
   margin: -25px 0 0 -25px;
 }
   
+.container-fluid {
+    background-color: #19440d;
+}
+.navbar-nav{
+    height: 40px;
+    background-color: #19440d;
+}

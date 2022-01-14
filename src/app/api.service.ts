@@ -114,6 +114,11 @@ export class ApiService {
     });
   }
 
+  getStockProgress() {
+    return this.httpClient.get(`${this.BASE_URL}/stock/progress`, {
+      headers: headerOption.headers
+    });
+  }
 
   userUpdate(params) {
     return this.httpClient.post(
