@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpRequest } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material";
 import { environment } from "src/environments/environment";
@@ -132,5 +132,18 @@ export class ApiService {
       headers: headerOption.headers,
       params: params,
     });
+  }
+
+  pickNpack(file, flag) {
+    const formData: FormData = new FormData();
+
+    formData.append('master_pick', flag);
+    formData.append('pp_file', file);
+    const req = new HttpRequest('POST', `${this.BASE_URL}/pickandpack`, formData, {
+      headers: headerOption.headers,
+      reportProgress: true,
+      responseType: 'json'
+    });
+    return this.httpClient.request(req);
   }
 }

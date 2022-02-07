@@ -16,12 +16,11 @@ export class StockComponent implements OnInit {
   stock: any;
   progressValue = '0'
   loaderFlag = false;
-  count = 0;
   status = [{ name: 'ESTIMATING', checked: false },
   { name: 'ESTIMATED', checked: false },
   { name: 'ORDERING', checked: false },
   { name: 'ORDERED', checked: false },
-  { name: 'BACKORDERING', checked: false },
+  { name: 'BACKORDERED', checked: false },
   { name: 'PICKING', checked: false },
   ]
 
@@ -48,8 +47,7 @@ export class StockComponent implements OnInit {
       this.apiService.getStock(params).subscribe((data: any) => {
         if (data) {
           this.apiService.openSnackBar(data.data.message, "Close")
-          console.log("Click ------>", data.data.code);
-          if (data.data.code === 202 || 503) {
+          if (data.data.code === 202) {
             this.stockFlag = true;
             this.stockProgress();
           }
@@ -68,12 +66,9 @@ export class StockComponent implements OnInit {
     this.apiService.getStockProgress().subscribe((data: any) => {
       console.log(data);
       var per = data.data.progress;
-      this.progressValue = per.split('%').join('');
+      this.progressValue  = per.split('%').join('');
       if (data.data.progress !== "100%") {
-        setTimeout(() => {
-          this.stockProgress();
-        }, 20000);
-
+        this.stockProgress()
       }
     })
   }

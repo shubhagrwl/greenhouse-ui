@@ -15,7 +15,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <button type="button" class="form-control btn-height" (click)="stockCheck()" value="status">Stock
-                        Check All Order</button>
+                        Check All Orders</button>
                 </div>
             </div>
             <div class="col-md-1">
@@ -66,9 +66,9 @@
             </div>
             <div class="col-md-3">
                 <div *ngFor="let s of status">
-                    <input type="checkbox" [(ngModel)]="s.checked"/>
-                    <label>{{s.name}}</label>
-                  </div>
+                    <input type="checkbox" [(ngModel)]="s.checked" />
+                    <label>&nbsp; {{s.name}}</label>
+                </div>
             </div>
         </div>
         <div class="row">

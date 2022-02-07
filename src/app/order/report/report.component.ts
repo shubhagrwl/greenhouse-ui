@@ -3,6 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { ApiService } from "src/app/api.service";
 import { DateUpdate } from "src/app/interface";
 import { Papa } from "ngx-papaparse";
+import { saveAs } from "file-saver";
 
 import {
   GridApi,
@@ -129,7 +130,7 @@ export class ReportComponent implements OnInit {
 
   download() {
     var win: any = window.open('_blank');
-    this.apiService.wasteRepostDownload('https://api.greenhouse.ca/waste/report/download', function (blob) {
+    this.apiService.wasteRepostDownload('http://144.126.150.47:9090/waste/report/download', function (blob) {
       var url = URL.createObjectURL(blob);
       win.location = url;
     });
@@ -145,7 +146,7 @@ export class ReportComponent implements OnInit {
     this.apiService.wasteRepostRefresh().subscribe(
       (data: any) => {
         console.log(data);
-        this.apiService.openSnackBar("Report is under process", "Open");
+        this.apiService.openSnackBar("Report is under process", "Close");
       },
       (err) => {
         this.apiService.openSnackBar(err.error.data.message, "Close");

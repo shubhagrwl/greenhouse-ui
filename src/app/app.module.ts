@@ -18,12 +18,12 @@ import { LayoutComponent } from './layout/layout.component';
 import { NgxMatDatetimePickerModule, NgxMatNativeDateModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 import { ReportComponent } from './order/report/report.component';
 import { AgGridModule } from 'ag-grid-angular';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UserComponent } from './order/user/user.component';
 import { ButtonRendererComponent } from './order/user/button-render.component';
 import { UserUpdateComponent } from './order/user-update/user-update.component';
 import { StockTableComponent } from './order/stock-table/stock-table.component';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -51,19 +51,19 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatNativeDateModule,
     HttpClientModule,
     FormsModule,
-    NgxMatDatetimePickerModule, 
+    NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
     ReactiveFormsModule,
     MatProgressBarModule,
     MatSnackBarModule,
-    MatDatepickerModule,
     MatProgressSpinnerModule,
     NgxMatNativeDateModule,
     AgGridModule.withComponents([ButtonRendererComponent]),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [
+  ], bootstrap: [AppComponent],
+
 
 })
 export class AppModule { }
