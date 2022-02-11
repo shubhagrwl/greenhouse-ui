@@ -1,7 +1,9 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 import { ApiService } from 'src/app/api.service';
-declare var $: any;
+import "moment-timezone";
+
 @Component({
   selector: 'app-stock',
   templateUrl: './stock.component.html',
@@ -11,6 +13,7 @@ export class StockComponent implements OnInit {
   reportFlag = false;
   fromDate;
   toDate;
+  currentDate;
   saleStatus;
   stockFlag = false;
   stock: any;
@@ -24,13 +27,23 @@ export class StockComponent implements OnInit {
   { name: 'PICKING', checked: false },
   ]
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {
+    this.currentDate = moment().tz("utc").format("YYYY-MM-DD HH:m:s");
+    this.fromDate = moment(this.currentDate).toDate();
+    this.toDate = moment(this.currentDate).toDate();
+  }
 
   ngOnInit() {
   }
 
   onClickReport() {
     this.reportFlag = true
+  }
+
+  formatDateTime(date) {
+    var format = moment(date).format("YYYY-MM-DD HH:m:s");
+    var time = moment.parseZone(format)
+    return time.toJSON();
   }
 
   stockCheck() {
@@ -40,9 +53,11 @@ export class StockComponent implements OnInit {
       this.apiService.openSnackBar('Please select From date, To date and status', "Close")
       return;
     } else {
-      let params = new HttpParams();
-      params = params.append("from", new Date(this.fromDate).toISOString().replace(".000Z", "Z"));
-      params = params.append("to", new Date(this.toDate).toISOString().replace(".000Z", "Z"));
+      let toD = this.formatDateTime(this.toDate),
+        fromD = this.formatDateTime(this.fromDate),
+        params = new HttpParams();
+      params = params.append("from", fromD);
+      params = params.append("to", toD);
       params = params.append("status", this.saleStatus);
       this.apiService.getStock(params).subscribe((data: any) => {
         if (data) {
@@ -66,7 +81,7 @@ export class StockComponent implements OnInit {
     this.apiService.getStockProgress().subscribe((data: any) => {
       console.log(data);
       var per = data.data.progress;
-      this.progressValue  = per.split('%').join('');
+      this.progressValue = per.split('%').join('');
       if (data.data.progress !== "100%") {
         this.stockProgress()
       }

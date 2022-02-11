@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { OrderComponent } from './order/order/order.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatDialogModule, MatFormFieldModule, MatInputModule, MatNativeDateModule, MatSnackBarModule } from '@angular/material';
+import { DateAdapter, MatDialogModule, MatFormFieldModule, MatInputModule, MatNativeDateModule, MatSnackBarModule, MAT_DATE_LOCALE } from '@angular/material';
 import { StockComponent } from './order/stock/stock.component';
 import { DateUpdateComponent } from './order/date-update/date-update.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -24,6 +24,8 @@ import { ButtonRendererComponent } from './order/user/button-render.component';
 import { UserUpdateComponent } from './order/user-update/user-update.component';
 import { StockTableComponent } from './order/stock-table/stock-table.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { OrderModule } from './order/order.module';
+import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter } from '@angular/material-moment-adapter';
 
 @NgModule({
   declarations: [
@@ -58,11 +60,15 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatSnackBarModule,
     MatProgressSpinnerModule,
     NgxMatNativeDateModule,
+    MatMomentDateModule,
     AgGridModule.withComponents([ButtonRendererComponent]),
     BrowserAnimationsModule,
   ],
   providers: [
-  ], bootstrap: [AppComponent],
+    { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } },
+
+  ],
+  bootstrap: [AppComponent],
 
 
 })

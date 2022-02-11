@@ -140,9 +140,11 @@ export class ApiService {
     formData.append('master_pick', flag);
     formData.append('pp_file', file);
     const req = new HttpRequest('POST', `${this.BASE_URL}/pickandpack`, formData, {
-      headers: headerOption.headers,
       reportProgress: true,
-      responseType: 'json'
+      responseType: 'json',
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      }),
     });
     return this.httpClient.request(req);
   }
