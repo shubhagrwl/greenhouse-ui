@@ -379,7 +379,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div>\n  <div style=\" text-align: center;\">\n    <img style=\"height: 70px; width: 50px;\"\n      src=\"https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719\"\n      alt=\"\"><br>\n    <span>GreenHouse</span><br>\n    <span>Plans Portal</span>\n  </div>\n  <div style=\"text-align: right; margin-right: 15px;\">\n    <span></span>\n    <span></span>\n  </div>\n</div>\n\n\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n  <div class=\"container-fluid\">\n    <ul class=\"navbar-nav mr-auto\">\n      <!-- <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"stock\">STOCK CONTROL</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"order\">ORDER PROCESSING</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"date\">DATE UPDATER </a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"user\">ADMIN</a>\n      </li> -->\n    </ul>\n  </div>\n</nav>\n\n\n<div class=\"container\">\n\n  <div class=\"loginDiv\">\n    <form [formGroup]=\"loginForm\">\n      <div class=\"row justify-content-center\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Username\" formControlName=\"username\" />\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"form-control\" placeholder=\"Password\" formControlName=\"password\" />\n        </div>\n\n        <div class=\"btn-div\">\n          <div class=\"row mb-3\">\n            <div class=\"col-md-12 text-center\">\n              <button style=\"height: 40px;\" (click)=\"login()\" class=\"btn\">Login</button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </form>\n  </div>\n\n</div>";
+    __webpack_exports__["default"] = "<div>\n  <div style=\" text-align: center;\">\n    <img style=\"height: 70px; width: 50px;\"\n      src=\"https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719\"\n      alt=\"\"><br>\n    <span>GreenHouse</span><br>\n    <!-- <span>Plans Portal</span> -->\n  </div>\n  <div style=\"text-align: right; margin-right: 15px;\">\n    <span></span>\n    <span></span>\n  </div>\n</div>\n\n\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n  <div class=\"container-fluid\">\n    <ul class=\"navbar-nav mr-auto\">\n      <!-- <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"stock\">STOCK CONTROL</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"order\">ORDER PROCESSING</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"date\">DATE UPDATER </a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"user\">ADMIN</a>\n      </li> -->\n    </ul>\n  </div>\n</nav>\n\n\n<div class=\"container\">\n\n  <div class=\"loginDiv\">\n    <form [formGroup]=\"loginForm\">\n      <div class=\"row justify-content-center\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Username\" formControlName=\"username\" />\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"form-control\" placeholder=\"Password\" formControlName=\"password\" />\n        </div>\n\n        <div class=\"btn-div\">\n          <div class=\"row mb-3\">\n            <div class=\"col-md-12 text-center\">\n              <button style=\"height: 40px;\" (click)=\"login()\" class=\"btn\">Login</button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </form>\n  </div>\n\n</div>";
     /***/
   },
 
@@ -4019,7 +4019,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var environment = {
       production: false,
-      BASE_URL: 'http://144.126.150.47:9090'
+      BASE_URL: 'https://api.greenhouse.ca'
     };
     /*
      * For easier debugging in development mode, you can import the following file
@@ -4108,7 +4108,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! /Users/sanddep/Downloads/greenhouse_21/src/main.ts */
+    /*! /Users/sanddep/Documents/code-orgosys/greenhouse-ui/src/main.ts */
     "./src/main.ts");
     /***/
   }
