@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material";
 import { environment } from "src/environments/environment";
 import { map } from 'rxjs/operators';
+import { Observable } from "rxjs";
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
@@ -134,18 +135,24 @@ export class ApiService {
     });
   }
 
-  pickNpack(file, flag) {
+  pickNpack(file, flag): Observable<any> {
     const formData: FormData = new FormData();
 
     formData.append('master_pick', flag);
     formData.append('pp_file', file);
-    const req = new HttpRequest('POST', `${this.BASE_URL}/pickandpack`, formData, {
+    const req = this.httpClient.post(`${this.BASE_URL}/pickandpack`, formData, {
       reportProgress: true,
       responseType: 'json',
       headers: new HttpHeaders({
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       }),
     });
-    return this.httpClient.request(req);
+    return req;
+  }
+
+  pickNpackStatus(): Observable<any> {
+    return this.httpClient.get(`${this.BASE_URL}/pickandpack/status`, {
+      headers: headerOption.headers
+    });
   }
 }

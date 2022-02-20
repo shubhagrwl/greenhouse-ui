@@ -5,7 +5,8 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <button id="masterBtn" type="button" class="form-control btn-height" (click)="onMasterPick()">
+                    <button id="masterBtn" type="button" class="form-control btn-height"
+                        (click)="clickEventHandler('masterPick')">
                         <span>MASTER PICK</span><br>
                         <span>(Pick Orders in Dear + Print Pick List + Print Packing Slips + Print Box Labels)</span>
                     </button>
@@ -31,7 +32,8 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <button id="printBtn" type="button" class="form-control btn-height" (click)="onPrintOnly()">
+                    <button id="printBtn" type="button" class="form-control btn-height"
+                        (click)="clickEventHandler('test')">
                         <span>PRINT ONLY</span><br>
                         <span>(Print Pick List + Print Packing Slips + Print Box Labels)</span>
                     </button>
@@ -55,5 +57,13 @@
             </div>
         </div>
 
+    </div>
+    <div *ngIf="stockFlag" style="position: relative;">
+        <mat-progress-bar mode="determinate" [value]="progressValue"></mat-progress-bar>
+        <span style="position: absolute; top: 0.5em;"
+            [ngStyle]="{'left': progressValue + '%'}">{{progressValue}}%</span>
+        <div *ngFor="let i of logs" style="text-align: center;">
+            {{i}}
+        </div>
     </div>
 </div>

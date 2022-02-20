@@ -379,7 +379,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div>\n  <div style=\" text-align: center;\">\n    <img style=\"height: 70px; width: 50px;\"\n      src=\"https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719\"\n      alt=\"\"><br>\n    <span>GreenHouse</span><br>\n    <!-- <span>Plans Portal</span> -->\n  </div>\n  <div style=\"text-align: right; margin-right: 15px;\">\n    <span></span>\n    <span></span>\n  </div>\n</div>\n\n\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n  <div class=\"container-fluid\">\n    <ul class=\"navbar-nav mr-auto\">\n      <!-- <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"stock\">STOCK CONTROL</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"order\">ORDER PROCESSING</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"date\">DATE UPDATER </a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"user\">ADMIN</a>\n      </li> -->\n    </ul>\n  </div>\n</nav>\n\n\n<div class=\"container\">\n\n  <div class=\"loginDiv\">\n    <form [formGroup]=\"loginForm\">\n      <div class=\"row justify-content-center\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Username\" formControlName=\"username\" />\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"form-control\" placeholder=\"Password\" formControlName=\"password\" />\n        </div>\n\n        <div class=\"btn-div\">\n          <div class=\"row mb-3\">\n            <div class=\"col-md-12 text-center\">\n              <button style=\"height: 40px;\" (click)=\"login()\" class=\"btn\">Login</button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </form>\n  </div>\n\n</div>";
+    __webpack_exports__["default"] = "<div>\n  <div style=\" text-align: center;\">\n    <img style=\"height: 70px; width: 50px;\"\n      src=\"https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719\"\n      alt=\"\"><br>\n    <span>Plantit</span><br>\n    <!-- <span>Plans Portal</span> -->\n  </div>\n  <div style=\"text-align: right; margin-right: 15px;\">\n    <span></span>\n    <span></span>\n  </div>\n</div>\n\n\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n  <div class=\"container-fluid\">\n    <ul class=\"navbar-nav mr-auto\">\n      <!-- <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"stock\">STOCK CONTROL</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"order\">ORDER PROCESSING</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"date\">DATE UPDATER </a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"user\">ADMIN</a>\n      </li> -->\n    </ul>\n  </div>\n</nav>\n\n\n<div class=\"container\">\n\n  <div class=\"loginDiv\">\n    <form [formGroup]=\"loginForm\">\n      <div class=\"row justify-content-center\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Username\" formControlName=\"username\" />\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"form-control\" placeholder=\"Password\" formControlName=\"password\" />\n        </div>\n\n        <div class=\"btn-div\">\n          <div class=\"row mb-3\">\n            <div class=\"col-md-12 text-center\">\n              <button style=\"height: 40px;\" (click)=\"login()\" class=\"btn\">Login</button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </form>\n  </div>\n\n</div>";
     /***/
   },
 
@@ -419,7 +419,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div>\n    <div style=\"height: 70px; text-align: center;\">\n        <img style=\"height: 70px; width: 50px;\"\n            src=\"https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719\"\n            alt=\"\"><br>\n        <span>GreenHouse</span><br>\n    </div>\n    <div style=\"text-align: right; margin-right: 15px;\">\n        <a (click)=\"logout()\">LOG OUT</a><br>\n        <span>{{username}}</span>\n    </div>\n</div>\n\n\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"container-fluid\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"stock\">STOCK CONTROL</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"order\">ORDER PROCESSING</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"date\">DATE UPDATER </a>\n            </li>\n            <li *ngIf=\"adminFlag\" class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"user\">ADMIN</a>\n            </li>\n        </ul>\n    </div>\n</nav>\n\n<!-- <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"stock\">Stock</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"order\">Order</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"date\">Date</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"user\">Users</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"right\"><i class=\"fas fa-sign-out-alt\"></i></a>\n            </li>\n        </ul>\n    </div>\n</nav> -->";
+    __webpack_exports__["default"] = "<div>\n    <div style=\"height: 70px; text-align: center;\">\n        <img style=\"height: 70px; width: 50px;\"\n            src=\"https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719\"\n            alt=\"\"><br>\n        <span>Plantit</span><br>\n    </div>\n    <div style=\"text-align: right; margin-right: 15px;\">\n        <a (click)=\"logout()\">LOG OUT</a><br>\n        <span>{{username}}</span>\n    </div>\n</div>\n\n\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"container-fluid\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"stock\">STOCK CONTROL</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"order\">ORDER PROCESSING</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"date\">DATE UPDATER </a>\n            </li>\n            <li *ngIf=\"adminFlag\" class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"user\">ADMIN</a>\n            </li>\n        </ul>\n    </div>\n</nav>\n\n<!-- <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"stock\">Stock</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"order\">Order</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"date\">Date</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"user\">Users</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"right\"><i class=\"fas fa-sign-out-alt\"></i></a>\n            </li>\n        </ul>\n    </div>\n</nav> -->";
     /***/
   },
 
@@ -479,7 +479,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"container\">\n    <div *ngIf=\"loaderFlag\" class=\"loader\"></div>\n\n    <div class=\"div\">\n        <div class=\"row\">\n            <div class=\"col-md-4\">\n                <div class=\"form-group\">\n                    <button id=\"masterBtn\" type=\"button\" class=\"form-control btn-height\" (click)=\"onMasterPick()\">\n                        <span>MASTER PICK</span><br>\n                        <span>(Pick Orders in Dear + Print Pick List + Print Packing Slips + Print Box Labels)</span>\n                    </button>\n                </div>\n            </div>\n            <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                    <label for=\"file\">FILE</label><br>\n                    <input type=\"file\" id=\"fileMaster\" (change)=\"onFilechange($event)\"><br>\n                    <span>Files must be .csv, containing at minimum, columns with headings: \"Driver Name\", \"Stop Number\"\n                        (0 & 999 are Nashua), \"Visit Name\", \"Order\" (containing an order number), and \"Phone\"</span>\n                </div>\n\n            </div>\n            <div class=\"col-md-2\">\n                <div class=\"form-group\">\n                    <button id=\"masterUpload\" type=\"button\" class=\"form-control btn-height\"\n                        (click)=\"onMasterPick('true')\">Upload</button>\n                </div>\n\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"col-md-4\">\n                <div class=\"form-group\">\n                    <button id=\"printBtn\" type=\"button\" class=\"form-control btn-height\" (click)=\"onPrintOnly()\">\n                        <span>PRINT ONLY</span><br>\n                        <span>(Print Pick List + Print Packing Slips + Print Box Labels)</span>\n                    </button>\n                </div>\n            </div>\n            <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                    <label for=\"file\">FILE</label><br>\n                    <input type=\"file\" id=\"filePrint\" (change)=\"onFilechange($event)\"><br>\n                    <span>Files must be .csv, containing at minimum, columns with headings: \"Driver Name\", \"Stop Number\"\n                        (0 & 999 are Nashua), \"Visit Name\", \"Order\" (containing an order number), and \"Phone\"</span>\n                </div>\n\n            </div>\n            <div class=\"col-md-2\">\n                <div class=\"form-group\">\n                    <button id=\"printUpload\" type=\"button\" class=\"form-control btn-height\"\n                        (click)=\"onPrintOnly('false')\">Upload</button>\n                </div>\n\n            </div>\n        </div>\n\n    </div>\n</div>";
+    __webpack_exports__["default"] = "<div class=\"container\">\n    <div *ngIf=\"loaderFlag\" class=\"loader\"></div>\n\n    <div class=\"div\">\n        <div class=\"row\">\n            <div class=\"col-md-4\">\n                <div class=\"form-group\">\n                    <button id=\"masterBtn\" type=\"button\" class=\"form-control btn-height\"\n                        (click)=\"clickEventHandler('masterPick')\">\n                        <span>MASTER PICK</span><br>\n                        <span>(Pick Orders in Dear + Print Pick List + Print Packing Slips + Print Box Labels)</span>\n                    </button>\n                </div>\n            </div>\n            <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                    <label for=\"file\">FILE</label><br>\n                    <input type=\"file\" id=\"fileMaster\" (change)=\"onFilechange($event)\"><br>\n                    <span>Files must be .csv, containing at minimum, columns with headings: \"Driver Name\", \"Stop Number\"\n                        (0 & 999 are Nashua), \"Visit Name\", \"Order\" (containing an order number), and \"Phone\"</span>\n                </div>\n\n            </div>\n            <div class=\"col-md-2\">\n                <div class=\"form-group\">\n                    <button id=\"masterUpload\" type=\"button\" class=\"form-control btn-height\"\n                        (click)=\"onMasterPick('true')\">Upload</button>\n                </div>\n\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"col-md-4\">\n                <div class=\"form-group\">\n                    <button id=\"printBtn\" type=\"button\" class=\"form-control btn-height\"\n                        (click)=\"clickEventHandler('test')\">\n                        <span>PRINT ONLY</span><br>\n                        <span>(Print Pick List + Print Packing Slips + Print Box Labels)</span>\n                    </button>\n                </div>\n            </div>\n            <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                    <label for=\"file\">FILE</label><br>\n                    <input type=\"file\" id=\"filePrint\" (change)=\"onFilechange($event)\"><br>\n                    <span>Files must be .csv, containing at minimum, columns with headings: \"Driver Name\", \"Stop Number\"\n                        (0 & 999 are Nashua), \"Visit Name\", \"Order\" (containing an order number), and \"Phone\"</span>\n                </div>\n\n            </div>\n            <div class=\"col-md-2\">\n                <div class=\"form-group\">\n                    <button id=\"printUpload\" type=\"button\" class=\"form-control btn-height\"\n                        (click)=\"onPrintOnly('false')\">Upload</button>\n                </div>\n\n            </div>\n        </div>\n\n    </div>\n    <div *ngIf=\"stockFlag\" style=\"position: relative;\">\n        <mat-progress-bar mode=\"determinate\" [value]=\"progressValue\"></mat-progress-bar>\n        <span style=\"position: absolute; top: 0.5em;\"\n            [ngStyle]=\"{'left': progressValue + '%'}\">{{progressValue}}%</span>\n        <div *ngFor=\"let i of logs\" style=\"text-align: center;\">\n            {{i}}\n        </div>\n    </div>\n</div>";
     /***/
   },
 
@@ -1396,14 +1396,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var formData = new FormData();
           formData.append('master_pick', flag);
           formData.append('pp_file', file);
-          var req = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpRequest"]('POST', "".concat(this.BASE_URL, "/pickandpack"), formData, {
+          var req = this.httpClient.post("".concat(this.BASE_URL, "/pickandpack"), formData, {
             reportProgress: true,
             responseType: 'json',
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
               Authorization: "Bearer ".concat(localStorage.getItem("token"))
             })
           });
-          return this.httpClient.request(req);
+          return req;
+        }
+      }, {
+        key: "pickNpackStatus",
+        value: function pickNpackStatus() {
+          return this.httpClient.get("".concat(this.BASE_URL, "/pickandpack/status"), {
+            headers: headerOption.headers
+          });
         }
       }]);
 
@@ -2642,7 +2649,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".selectpicker{\n    width: 100%;\n    height: 35px;\n}\n\n.form-group {\n    margin: 20px;\n}\n\n.btn-height {\n    height: 100%;\n}\n\n.div{\n  margin-top: 5%;\n}\n\n.loader{\n    position: fixed;\n    left: 0px;\n    top: 0px;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n    background: url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') \n                50% 50% no-repeat rgb(249,249,249);\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvb3JkZXIvb3JkZXIvb3JkZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFlBQVk7QUFDaEI7O0FBR0E7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0lBQ0ksZUFBZTtJQUNmLFNBQVM7SUFDVCxRQUFRO0lBQ1IsV0FBVztJQUNYLFlBQVk7SUFDWixVQUFVO0lBQ1Y7a0RBQzhDO0VBQ2hEIiwiZmlsZSI6InNyYy9hcHAvb3JkZXIvb3JkZXIvb3JkZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zZWxlY3RwaWNrZXJ7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAzNXB4O1xufVxuXG4uZm9ybS1ncm91cCB7XG4gICAgbWFyZ2luOiAyMHB4O1xufVxuXG4uYnRuLWhlaWdodCB7XG4gICAgaGVpZ2h0OiAxMDAlO1xufVxuXG5cbi5kaXZ7XG4gIG1hcmdpbi10b3A6IDUlO1xufVxuICBcbi5sb2FkZXJ7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIGxlZnQ6IDBweDtcbiAgICB0b3A6IDBweDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgei1pbmRleDogMTtcbiAgICBiYWNrZ3JvdW5kOiB1cmwoJy8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvdGh1bWIvZS9lNS9QaGlfZmVub21lbmkuZ2lmLzUwcHgtUGhpX2Zlbm9tZW5pLmdpZicpIFxuICAgICAgICAgICAgICAgIDUwJSA1MCUgbm8tcmVwZWF0IHJnYigyNDksMjQ5LDI0OSk7XG4gIH0iXX0= */";
+    __webpack_exports__["default"] = ".selectpicker{\n    width: 100%;\n    height: 35px;\n}\n\n.form-group {\n    margin: 20px;\n}\n\n.btn-height {\n    height: 100%;\n}\n\n.div{\n  margin-top: 5%;\n}\n\n.loader{\n    position: fixed;\n    left: 0px;\n    top: 0px;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n    background: url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') \n                50% 50% no-repeat rgb(249,249,249);\n  }\n\nmat-progress-bar {\n    height: 2em;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvb3JkZXIvb3JkZXIvb3JkZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFlBQVk7QUFDaEI7O0FBR0E7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0lBQ0ksZUFBZTtJQUNmLFNBQVM7SUFDVCxRQUFRO0lBQ1IsV0FBVztJQUNYLFlBQVk7SUFDWixVQUFVO0lBQ1Y7a0RBQzhDO0VBQ2hEOztBQUVBO0lBQ0UsV0FBVztFQUNiIiwiZmlsZSI6InNyYy9hcHAvb3JkZXIvb3JkZXIvb3JkZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zZWxlY3RwaWNrZXJ7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAzNXB4O1xufVxuXG4uZm9ybS1ncm91cCB7XG4gICAgbWFyZ2luOiAyMHB4O1xufVxuXG4uYnRuLWhlaWdodCB7XG4gICAgaGVpZ2h0OiAxMDAlO1xufVxuXG5cbi5kaXZ7XG4gIG1hcmdpbi10b3A6IDUlO1xufVxuICBcbi5sb2FkZXJ7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIGxlZnQ6IDBweDtcbiAgICB0b3A6IDBweDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgei1pbmRleDogMTtcbiAgICBiYWNrZ3JvdW5kOiB1cmwoJy8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvdGh1bWIvZS9lNS9QaGlfZmVub21lbmkuZ2lmLzUwcHgtUGhpX2Zlbm9tZW5pLmdpZicpIFxuICAgICAgICAgICAgICAgIDUwJSA1MCUgbm8tcmVwZWF0IHJnYigyNDksMjQ5LDI0OSk7XG4gIH1cblxuICBtYXQtcHJvZ3Jlc3MtYmFyIHtcbiAgICBoZWlnaHQ6IDJlbTtcbiAgfSJdfQ== */";
     /***/
   },
 
@@ -2691,11 +2698,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.apiService = apiService;
         this.file = null;
         this.loaderFlag = false;
+        this.progressValue = 0;
+        this.logs = [];
+        this.stockFlag = false;
       }
 
       _createClass(OrderComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          $("#filePrint").prop('disabled', true);
+          $("#printUpload").prop('disabled', true);
+          $("#fileMaster").prop('disabled', true);
+          $("#masterUpload").prop('disabled', true);
+        }
       }, {
         key: "onFilechange",
         value: function onFilechange(event) {
@@ -2703,12 +2718,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.file = event.target.files[0];
         }
       }, {
+        key: "onClickReport",
+        value: function onClickReport() {
+          this.stockFlag = true;
+        }
+      }, {
+        key: "clickEventHandler",
+        value: function clickEventHandler(eventName) {
+          if (eventName === 'masterPick') {
+            this.onMasterPick('');
+          } else {
+            this.onPrintOnly('');
+          }
+        }
+      }, {
         key: "onMasterPick",
         value: function onMasterPick(param) {
           var _this7 = this;
 
-          $("#filePrint").prop('disabled', true);
-          $("#printBtn").prop('disabled', true);
+          $("#filePrint").prop('disabled', true); // $("#printBtn").prop('disabled', true);
+
           $("#printUpload").prop('disabled', true);
           $("#fileMaster").prop('disabled', false);
           $("#masterBtn").prop('disabled', false);
@@ -2717,8 +2746,27 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (param === "true") {
             this.loaderFlag = true;
             this.apiService.pickNpack(this.file, 'true').subscribe(function (data) {
-              console.log(data);
+              if (data) {
+                console.log(data);
+
+                if (data.data.code === 202) {
+                  _this7.loaderFlag = false;
+
+                  _this7.onClickReport();
+
+                  _this7.progress();
+
+                  _this7.apiService.openSnackBar('File Accepted, Pick & Pack Lists will be emailed to you upon completion', "Close");
+                } else {
+                  _this7.loaderFlag = false;
+
+                  _this7.apiService.openSnackBar('Incompatible file. Try a different file', "Close");
+                }
+              }
+            }, function (err) {
               _this7.loaderFlag = false;
+
+              _this7.apiService.openSnackBar('Incompatible file. Try a different file', "Close");
             });
           }
         }
@@ -2727,8 +2775,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function onPrintOnly(param) {
           var _this8 = this;
 
-          $("#fileMaster").prop('disabled', true);
-          $("#masterBtn").prop('disabled', true);
+          console.log(param);
+          $("#fileMaster").prop('disabled', true); // $("#masterBtn").prop('disabled', true);
+
           $("#masterUpload").prop('disabled', true);
           $("#filePrint").prop('disabled', false);
           $("#printBtn").prop('disabled', false);
@@ -2737,10 +2786,45 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (param === "false") {
             this.loaderFlag = true;
             this.apiService.pickNpack(this.file, 'true').subscribe(function (data) {
-              console.log(data);
+              if (data) {
+                console.log(data.data.code);
+
+                if (data.data.code === 202) {
+                  _this8.loaderFlag = false;
+
+                  _this8.onClickReport();
+
+                  _this8.progress();
+
+                  _this8.apiService.openSnackBar('File Accepted, Pick & Pack Lists will be emailed to you upon completion', "Close");
+                } else {
+                  _this8.loaderFlag = false;
+
+                  _this8.apiService.openSnackBar('Incompatible file. Try a different file', "Close");
+                }
+              }
+            }, function (err) {
               _this8.loaderFlag = false;
+
+              _this8.apiService.openSnackBar('Incompatible file. Try a different file', "Close");
             });
           }
+        }
+      }, {
+        key: "progress",
+        value: function progress() {
+          var _this9 = this;
+
+          this.apiService.pickNpackStatus().subscribe(function (data) {
+            var per = data.data.progress;
+            _this9.progressValue = per;
+            _this9.logs = data.data.logger;
+            console.log(data.data.logger);
+
+            if (data.data.progress !== 100) {
+              _this9.progress();
+            }
+          });
         }
       }]);
 
@@ -2843,7 +2927,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var ReportComponent = /*#__PURE__*/function () {
       function ReportComponent(apiService, router, activatedRoute) {
-        var _this9 = this;
+        var _this10 = this;
 
         _classCallCheck(this, ReportComponent);
 
@@ -2862,50 +2946,50 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         };
         this.dataSource = {
           getRows: function getRows(params) {
-            if (_this9.gridOptions.paginationPageSize != undefined) {
-              _this9.pageNo = params.startRow / _this9.gridOptions.paginationPageSize + 1;
+            if (_this10.gridOptions.paginationPageSize != undefined) {
+              _this10.pageNo = params.startRow / _this10.gridOptions.paginationPageSize + 1;
             }
 
             var param = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]();
-            param = param.append("page", _this9.pageNo.toString());
+            param = param.append("page", _this10.pageNo.toString());
             param = param.append("sort", "ASC");
             param = param.append("order", "name");
-            _this9.loaderFlag = true;
+            _this10.loaderFlag = true;
 
-            _this9.apiService.wasteRepost(param).subscribe(function (data) {
-              _this9.loaderFlag = false;
+            _this10.apiService.wasteRepost(param).subscribe(function (data) {
+              _this10.loaderFlag = false;
               console.log(data);
-              _this9.downloadData = data.data.report;
+              _this10.downloadData = data.data.report;
               params.successCallback(data.data.report, data.data.pagination.total);
-              _this9.dateInterface.datepicker = data.data.last_running_time;
+              _this10.dateInterface.datepicker = data.data.last_running_time;
             }, function (err) {
-              _this9.loaderFlag = false;
+              _this10.loaderFlag = false;
 
-              _this9.apiService.openSnackBar(err.error.data.message, "Close");
+              _this10.apiService.openSnackBar(err.error.data.message, "Close");
             });
           }
         };
         this.dataSourceHistory = {
           getRows: function getRows(params) {
-            if (_this9.gridOptions.paginationPageSize != undefined) {
-              _this9.pageNo = params.startRow / _this9.gridOptions.paginationPageSize + 1;
+            if (_this10.gridOptions.paginationPageSize != undefined) {
+              _this10.pageNo = params.startRow / _this10.gridOptions.paginationPageSize + 1;
             }
 
             var param = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]();
-            param = param.append("page", _this9.pageNo.toString());
+            param = param.append("page", _this10.pageNo.toString());
             param = param.append("sort", "ASC");
             param = param.append("order", "name");
-            _this9.loaderFlag = true;
+            _this10.loaderFlag = true;
 
-            _this9.apiService.wasteRepostHistory(param).subscribe(function (data) {
+            _this10.apiService.wasteRepostHistory(param).subscribe(function (data) {
               console.log(data);
-              _this9.loaderFlag = false;
+              _this10.loaderFlag = false;
               params.successCallback(data.data.report, data.data.pagination.total);
-              _this9.dateInterface.datepicker = data.data.last_running_time;
+              _this10.dateInterface.datepicker = data.data.last_running_time;
             }, function (err) {
-              _this9.loaderFlag = false;
+              _this10.loaderFlag = false;
 
-              _this9.apiService.openSnackBar(err.error.data.message, "Close");
+              _this10.apiService.openSnackBar(err.error.data.message, "Close");
             });
           }
         };
@@ -2985,14 +3069,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "refresh",
         value: function refresh() {
-          var _this10 = this;
+          var _this11 = this;
 
           this.apiService.wasteRepostRefresh().subscribe(function (data) {
             console.log(data);
 
-            _this10.apiService.openSnackBar("Report is under process", "Close");
+            _this11.apiService.openSnackBar("Report is under process", "Close");
           }, function (err) {
-            _this10.apiService.openSnackBar(err.error.data.message, "Close");
+            _this11.apiService.openSnackBar(err.error.data.message, "Close");
           });
         }
       }]);
@@ -3326,7 +3410,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "stockCheck",
         value: function stockCheck() {
-          var _this11 = this;
+          var _this12 = this;
 
           var result = this.status.filter(function (x) {
             return x.checked;
@@ -3347,35 +3431,35 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             params = params.append("status", this.saleStatus);
             this.apiService.getStock(params).subscribe(function (data) {
               if (data) {
-                _this11.apiService.openSnackBar(data.data.message, "Close");
+                _this12.apiService.openSnackBar(data.data.message, "Close");
 
                 if (data.data.code === 202) {
-                  _this11.stockFlag = true;
+                  _this12.stockFlag = true;
 
-                  _this11.stockProgress();
+                  _this12.stockProgress();
                 }
               } else {
-                _this11.apiService.openSnackBar(data.data.message, "Close");
+                _this12.apiService.openSnackBar(data.data.message, "Close");
               }
             }, function (err) {
               console.log(err);
 
-              _this11.apiService.openSnackBar(err.error.data.message, "Close");
+              _this12.apiService.openSnackBar(err.error.data.message, "Close");
             });
           }
         }
       }, {
         key: "stockProgress",
         value: function stockProgress() {
-          var _this12 = this;
+          var _this13 = this;
 
           this.apiService.getStockProgress().subscribe(function (data) {
             console.log(data);
             var per = data.data.progress;
-            _this12.progressValue = per.split('%').join('');
+            _this13.progressValue = per.split('%').join('');
 
             if (data.data.progress !== "100%") {
-              _this12.stockProgress();
+              _this13.stockProgress();
             }
           });
         }
@@ -3677,7 +3761,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "delete",
         value: function _delete() {
-          var _this13 = this;
+          var _this14 = this;
 
           console.log(this.params);
           var param = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]();
@@ -3686,7 +3770,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             console.log(data);
             location.reload();
           }, function (err) {
-            _this13.apiService.openSnackBar(err.error.data.message, "Close");
+            _this14.apiService.openSnackBar(err.error.data.message, "Close");
           });
         }
       }]);
@@ -3787,7 +3871,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var UserComponent = /*#__PURE__*/function () {
       function UserComponent(apiService, dialog) {
-        var _this14 = this;
+        var _this15 = this;
 
         _classCallCheck(this, UserComponent);
 
@@ -3838,16 +3922,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }];
         this.dataSource = {
           getRows: function getRows(params) {
-            if (_this14.gridOptions.paginationPageSize != undefined) {
-              _this14.pageNo = params.startRow / _this14.gridOptions.paginationPageSize + 1;
+            if (_this15.gridOptions.paginationPageSize != undefined) {
+              _this15.pageNo = params.startRow / _this15.gridOptions.paginationPageSize + 1;
             }
 
-            _this14.apiService.getAllUsers().subscribe(function (data) {
+            _this15.apiService.getAllUsers().subscribe(function (data) {
               console.log(data);
-              _this14.rowData = data.data;
+              _this15.rowData = data.data;
               params.successCallback(data.data);
             }, function (err) {
-              _this14.apiService.openSnackBar(err.error.data.message, "Close");
+              _this15.apiService.openSnackBar(err.error.data.message, "Close");
             });
           }
         };

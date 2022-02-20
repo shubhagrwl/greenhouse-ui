@@ -347,7 +347,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <div style=\" text-align: center;\">\n    <img style=\"height: 70px; width: 50px;\"\n      src=\"https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719\"\n      alt=\"\"><br>\n    <span>GreenHouse</span><br>\n    <!-- <span>Plans Portal</span> -->\n  </div>\n  <div style=\"text-align: right; margin-right: 15px;\">\n    <span></span>\n    <span></span>\n  </div>\n</div>\n\n\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n  <div class=\"container-fluid\">\n    <ul class=\"navbar-nav mr-auto\">\n      <!-- <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"stock\">STOCK CONTROL</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"order\">ORDER PROCESSING</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"date\">DATE UPDATER </a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"user\">ADMIN</a>\n      </li> -->\n    </ul>\n  </div>\n</nav>\n\n\n<div class=\"container\">\n\n  <div class=\"loginDiv\">\n    <form [formGroup]=\"loginForm\">\n      <div class=\"row justify-content-center\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Username\" formControlName=\"username\" />\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"form-control\" placeholder=\"Password\" formControlName=\"password\" />\n        </div>\n\n        <div class=\"btn-div\">\n          <div class=\"row mb-3\">\n            <div class=\"col-md-12 text-center\">\n              <button style=\"height: 40px;\" (click)=\"login()\" class=\"btn\">Login</button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </form>\n  </div>\n\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <div style=\" text-align: center;\">\n    <img style=\"height: 70px; width: 50px;\"\n      src=\"https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719\"\n      alt=\"\"><br>\n    <span>Plantit</span><br>\n    <!-- <span>Plans Portal</span> -->\n  </div>\n  <div style=\"text-align: right; margin-right: 15px;\">\n    <span></span>\n    <span></span>\n  </div>\n</div>\n\n\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n  <div class=\"container-fluid\">\n    <ul class=\"navbar-nav mr-auto\">\n      <!-- <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"stock\">STOCK CONTROL</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"order\">ORDER PROCESSING</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"date\">DATE UPDATER </a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"user\">ADMIN</a>\n      </li> -->\n    </ul>\n  </div>\n</nav>\n\n\n<div class=\"container\">\n\n  <div class=\"loginDiv\">\n    <form [formGroup]=\"loginForm\">\n      <div class=\"row justify-content-center\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Username\" formControlName=\"username\" />\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"form-control\" placeholder=\"Password\" formControlName=\"password\" />\n        </div>\n\n        <div class=\"btn-div\">\n          <div class=\"row mb-3\">\n            <div class=\"col-md-12 text-center\">\n              <button style=\"height: 40px;\" (click)=\"login()\" class=\"btn\">Login</button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </form>\n  </div>\n\n</div>");
 
 /***/ }),
 
@@ -373,7 +373,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <div style=\"height: 70px; text-align: center;\">\n        <img style=\"height: 70px; width: 50px;\"\n            src=\"https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719\"\n            alt=\"\"><br>\n        <span>GreenHouse</span><br>\n    </div>\n    <div style=\"text-align: right; margin-right: 15px;\">\n        <a (click)=\"logout()\">LOG OUT</a><br>\n        <span>{{username}}</span>\n    </div>\n</div>\n\n\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"container-fluid\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"stock\">STOCK CONTROL</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"order\">ORDER PROCESSING</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"date\">DATE UPDATER </a>\n            </li>\n            <li *ngIf=\"adminFlag\" class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"user\">ADMIN</a>\n            </li>\n        </ul>\n    </div>\n</nav>\n\n<!-- <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"stock\">Stock</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"order\">Order</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"date\">Date</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"user\">Users</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"right\"><i class=\"fas fa-sign-out-alt\"></i></a>\n            </li>\n        </ul>\n    </div>\n</nav> -->");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <div style=\"height: 70px; text-align: center;\">\n        <img style=\"height: 70px; width: 50px;\"\n            src=\"https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719\"\n            alt=\"\"><br>\n        <span>Plantit</span><br>\n    </div>\n    <div style=\"text-align: right; margin-right: 15px;\">\n        <a (click)=\"logout()\">LOG OUT</a><br>\n        <span>{{username}}</span>\n    </div>\n</div>\n\n\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"container-fluid\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"stock\">STOCK CONTROL</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"order\">ORDER PROCESSING</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"date\">DATE UPDATER </a>\n            </li>\n            <li *ngIf=\"adminFlag\" class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"user\">ADMIN</a>\n            </li>\n        </ul>\n    </div>\n</nav>\n\n<!-- <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"stock\">Stock</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"order\">Order</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"date\">Date</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"user\">Users</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"right\"><i class=\"fas fa-sign-out-alt\"></i></a>\n            </li>\n        </ul>\n    </div>\n</nav> -->");
 
 /***/ }),
 
@@ -412,7 +412,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div *ngIf=\"loaderFlag\" class=\"loader\"></div>\n\n    <div class=\"div\">\n        <div class=\"row\">\n            <div class=\"col-md-4\">\n                <div class=\"form-group\">\n                    <button id=\"masterBtn\" type=\"button\" class=\"form-control btn-height\" (click)=\"onMasterPick()\">\n                        <span>MASTER PICK</span><br>\n                        <span>(Pick Orders in Dear + Print Pick List + Print Packing Slips + Print Box Labels)</span>\n                    </button>\n                </div>\n            </div>\n            <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                    <label for=\"file\">FILE</label><br>\n                    <input type=\"file\" id=\"fileMaster\" (change)=\"onFilechange($event)\"><br>\n                    <span>Files must be .csv, containing at minimum, columns with headings: \"Driver Name\", \"Stop Number\"\n                        (0 & 999 are Nashua), \"Visit Name\", \"Order\" (containing an order number), and \"Phone\"</span>\n                </div>\n\n            </div>\n            <div class=\"col-md-2\">\n                <div class=\"form-group\">\n                    <button id=\"masterUpload\" type=\"button\" class=\"form-control btn-height\"\n                        (click)=\"onMasterPick('true')\">Upload</button>\n                </div>\n\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"col-md-4\">\n                <div class=\"form-group\">\n                    <button id=\"printBtn\" type=\"button\" class=\"form-control btn-height\" (click)=\"onPrintOnly()\">\n                        <span>PRINT ONLY</span><br>\n                        <span>(Print Pick List + Print Packing Slips + Print Box Labels)</span>\n                    </button>\n                </div>\n            </div>\n            <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                    <label for=\"file\">FILE</label><br>\n                    <input type=\"file\" id=\"filePrint\" (change)=\"onFilechange($event)\"><br>\n                    <span>Files must be .csv, containing at minimum, columns with headings: \"Driver Name\", \"Stop Number\"\n                        (0 & 999 are Nashua), \"Visit Name\", \"Order\" (containing an order number), and \"Phone\"</span>\n                </div>\n\n            </div>\n            <div class=\"col-md-2\">\n                <div class=\"form-group\">\n                    <button id=\"printUpload\" type=\"button\" class=\"form-control btn-height\"\n                        (click)=\"onPrintOnly('false')\">Upload</button>\n                </div>\n\n            </div>\n        </div>\n\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div *ngIf=\"loaderFlag\" class=\"loader\"></div>\n\n    <div class=\"div\">\n        <div class=\"row\">\n            <div class=\"col-md-4\">\n                <div class=\"form-group\">\n                    <button id=\"masterBtn\" type=\"button\" class=\"form-control btn-height\"\n                        (click)=\"clickEventHandler('masterPick')\">\n                        <span>MASTER PICK</span><br>\n                        <span>(Pick Orders in Dear + Print Pick List + Print Packing Slips + Print Box Labels)</span>\n                    </button>\n                </div>\n            </div>\n            <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                    <label for=\"file\">FILE</label><br>\n                    <input type=\"file\" id=\"fileMaster\" (change)=\"onFilechange($event)\"><br>\n                    <span>Files must be .csv, containing at minimum, columns with headings: \"Driver Name\", \"Stop Number\"\n                        (0 & 999 are Nashua), \"Visit Name\", \"Order\" (containing an order number), and \"Phone\"</span>\n                </div>\n\n            </div>\n            <div class=\"col-md-2\">\n                <div class=\"form-group\">\n                    <button id=\"masterUpload\" type=\"button\" class=\"form-control btn-height\"\n                        (click)=\"onMasterPick('true')\">Upload</button>\n                </div>\n\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"col-md-4\">\n                <div class=\"form-group\">\n                    <button id=\"printBtn\" type=\"button\" class=\"form-control btn-height\"\n                        (click)=\"clickEventHandler('test')\">\n                        <span>PRINT ONLY</span><br>\n                        <span>(Print Pick List + Print Packing Slips + Print Box Labels)</span>\n                    </button>\n                </div>\n            </div>\n            <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                    <label for=\"file\">FILE</label><br>\n                    <input type=\"file\" id=\"filePrint\" (change)=\"onFilechange($event)\"><br>\n                    <span>Files must be .csv, containing at minimum, columns with headings: \"Driver Name\", \"Stop Number\"\n                        (0 & 999 are Nashua), \"Visit Name\", \"Order\" (containing an order number), and \"Phone\"</span>\n                </div>\n\n            </div>\n            <div class=\"col-md-2\">\n                <div class=\"form-group\">\n                    <button id=\"printUpload\" type=\"button\" class=\"form-control btn-height\"\n                        (click)=\"onPrintOnly('false')\">Upload</button>\n                </div>\n\n            </div>\n        </div>\n\n    </div>\n    <div *ngIf=\"stockFlag\" style=\"position: relative;\">\n        <mat-progress-bar mode=\"determinate\" [value]=\"progressValue\"></mat-progress-bar>\n        <span style=\"position: absolute; top: 0.5em;\"\n            [ngStyle]=\"{'left': progressValue + '%'}\">{{progressValue}}%</span>\n        <div *ngFor=\"let i of logs\" style=\"text-align: center;\">\n            {{i}}\n        </div>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -863,14 +863,19 @@ let ApiService = class ApiService {
         const formData = new FormData();
         formData.append('master_pick', flag);
         formData.append('pp_file', file);
-        const req = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpRequest"]('POST', `${this.BASE_URL}/pickandpack`, formData, {
+        const req = this.httpClient.post(`${this.BASE_URL}/pickandpack`, formData, {
             reportProgress: true,
             responseType: 'json',
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
             }),
         });
-        return this.httpClient.request(req);
+        return req;
+    }
+    pickNpackStatus() {
+        return this.httpClient.get(`${this.BASE_URL}/pickandpack/status`, {
+            headers: headerOption.headers
+        });
     }
 };
 ApiService.ctorParameters = () => [
@@ -1600,7 +1605,7 @@ DateUpdateComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".selectpicker{\n    width: 100%;\n    height: 35px;\n}\n\n.form-group {\n    margin: 20px;\n}\n\n.btn-height {\n    height: 100%;\n}\n\n.div{\n  margin-top: 5%;\n}\n\n.loader{\n    position: fixed;\n    left: 0px;\n    top: 0px;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n    background: url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') \n                50% 50% no-repeat rgb(249,249,249);\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvb3JkZXIvb3JkZXIvb3JkZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFlBQVk7QUFDaEI7O0FBR0E7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0lBQ0ksZUFBZTtJQUNmLFNBQVM7SUFDVCxRQUFRO0lBQ1IsV0FBVztJQUNYLFlBQVk7SUFDWixVQUFVO0lBQ1Y7a0RBQzhDO0VBQ2hEIiwiZmlsZSI6InNyYy9hcHAvb3JkZXIvb3JkZXIvb3JkZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zZWxlY3RwaWNrZXJ7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAzNXB4O1xufVxuXG4uZm9ybS1ncm91cCB7XG4gICAgbWFyZ2luOiAyMHB4O1xufVxuXG4uYnRuLWhlaWdodCB7XG4gICAgaGVpZ2h0OiAxMDAlO1xufVxuXG5cbi5kaXZ7XG4gIG1hcmdpbi10b3A6IDUlO1xufVxuICBcbi5sb2FkZXJ7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIGxlZnQ6IDBweDtcbiAgICB0b3A6IDBweDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgei1pbmRleDogMTtcbiAgICBiYWNrZ3JvdW5kOiB1cmwoJy8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvdGh1bWIvZS9lNS9QaGlfZmVub21lbmkuZ2lmLzUwcHgtUGhpX2Zlbm9tZW5pLmdpZicpIFxuICAgICAgICAgICAgICAgIDUwJSA1MCUgbm8tcmVwZWF0IHJnYigyNDksMjQ5LDI0OSk7XG4gIH0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".selectpicker{\n    width: 100%;\n    height: 35px;\n}\n\n.form-group {\n    margin: 20px;\n}\n\n.btn-height {\n    height: 100%;\n}\n\n.div{\n  margin-top: 5%;\n}\n\n.loader{\n    position: fixed;\n    left: 0px;\n    top: 0px;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n    background: url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') \n                50% 50% no-repeat rgb(249,249,249);\n  }\n\nmat-progress-bar {\n    height: 2em;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvb3JkZXIvb3JkZXIvb3JkZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFlBQVk7QUFDaEI7O0FBR0E7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0lBQ0ksZUFBZTtJQUNmLFNBQVM7SUFDVCxRQUFRO0lBQ1IsV0FBVztJQUNYLFlBQVk7SUFDWixVQUFVO0lBQ1Y7a0RBQzhDO0VBQ2hEOztBQUVBO0lBQ0UsV0FBVztFQUNiIiwiZmlsZSI6InNyYy9hcHAvb3JkZXIvb3JkZXIvb3JkZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zZWxlY3RwaWNrZXJ7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAzNXB4O1xufVxuXG4uZm9ybS1ncm91cCB7XG4gICAgbWFyZ2luOiAyMHB4O1xufVxuXG4uYnRuLWhlaWdodCB7XG4gICAgaGVpZ2h0OiAxMDAlO1xufVxuXG5cbi5kaXZ7XG4gIG1hcmdpbi10b3A6IDUlO1xufVxuICBcbi5sb2FkZXJ7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIGxlZnQ6IDBweDtcbiAgICB0b3A6IDBweDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgei1pbmRleDogMTtcbiAgICBiYWNrZ3JvdW5kOiB1cmwoJy8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvdGh1bWIvZS9lNS9QaGlfZmVub21lbmkuZ2lmLzUwcHgtUGhpX2Zlbm9tZW5pLmdpZicpIFxuICAgICAgICAgICAgICAgIDUwJSA1MCUgbm8tcmVwZWF0IHJnYigyNDksMjQ5LDI0OSk7XG4gIH1cblxuICBtYXQtcHJvZ3Jlc3MtYmFyIHtcbiAgICBoZWlnaHQ6IDJlbTtcbiAgfSJdfQ== */");
 
 /***/ }),
 
@@ -1625,16 +1630,34 @@ let OrderComponent = class OrderComponent {
         this.apiService = apiService;
         this.file = null;
         this.loaderFlag = false;
+        this.progressValue = 0;
+        this.logs = [];
+        this.stockFlag = false;
     }
     ngOnInit() {
+        $("#filePrint").prop('disabled', true);
+        $("#printUpload").prop('disabled', true);
+        $("#fileMaster").prop('disabled', true);
+        $("#masterUpload").prop('disabled', true);
     }
     onFilechange(event) {
         console.log(event.target.files[0]);
         this.file = event.target.files[0];
     }
+    onClickReport() {
+        this.stockFlag = true;
+    }
+    clickEventHandler(eventName) {
+        if (eventName === 'masterPick') {
+            this.onMasterPick('');
+        }
+        else {
+            this.onPrintOnly('');
+        }
+    }
     onMasterPick(param) {
         $("#filePrint").prop('disabled', true);
-        $("#printBtn").prop('disabled', true);
+        // $("#printBtn").prop('disabled', true);
         $("#printUpload").prop('disabled', true);
         $("#fileMaster").prop('disabled', false);
         $("#masterBtn").prop('disabled', false);
@@ -1642,14 +1665,29 @@ let OrderComponent = class OrderComponent {
         if (param === "true") {
             this.loaderFlag = true;
             this.apiService.pickNpack(this.file, 'true').subscribe((data) => {
-                console.log(data);
+                if (data) {
+                    console.log(data);
+                    if (data.data.code === 202) {
+                        this.loaderFlag = false;
+                        this.onClickReport();
+                        this.progress();
+                        this.apiService.openSnackBar('File Accepted, Pick & Pack Lists will be emailed to you upon completion', "Close");
+                    }
+                    else {
+                        this.loaderFlag = false;
+                        this.apiService.openSnackBar('Incompatible file. Try a different file', "Close");
+                    }
+                }
+            }, (err) => {
                 this.loaderFlag = false;
+                this.apiService.openSnackBar('Incompatible file. Try a different file', "Close");
             });
         }
     }
     onPrintOnly(param) {
+        console.log(param);
         $("#fileMaster").prop('disabled', true);
-        $("#masterBtn").prop('disabled', true);
+        // $("#masterBtn").prop('disabled', true);
         $("#masterUpload").prop('disabled', true);
         $("#filePrint").prop('disabled', false);
         $("#printBtn").prop('disabled', false);
@@ -1657,10 +1695,35 @@ let OrderComponent = class OrderComponent {
         if (param === "false") {
             this.loaderFlag = true;
             this.apiService.pickNpack(this.file, 'true').subscribe((data) => {
-                console.log(data);
+                if (data) {
+                    console.log(data.data.code);
+                    if (data.data.code === 202) {
+                        this.loaderFlag = false;
+                        this.onClickReport();
+                        this.progress();
+                        this.apiService.openSnackBar('File Accepted, Pick & Pack Lists will be emailed to you upon completion', "Close");
+                    }
+                    else {
+                        this.loaderFlag = false;
+                        this.apiService.openSnackBar('Incompatible file. Try a different file', "Close");
+                    }
+                }
+            }, (err) => {
                 this.loaderFlag = false;
+                this.apiService.openSnackBar('Incompatible file. Try a different file', "Close");
             });
         }
+    }
+    progress() {
+        this.apiService.pickNpackStatus().subscribe((data) => {
+            const per = data.data.progress;
+            this.progressValue = per;
+            this.logs = data.data.logger;
+            console.log(data.data.logger);
+            if (data.data.progress !== 100) {
+                this.progress();
+            }
+        });
     }
 };
 OrderComponent.ctorParameters = () => [
