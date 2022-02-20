@@ -2821,9 +2821,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             _this9.logs = data.data.logger;
             console.log(data.data.logger);
 
-            if (data.data.progress !== 100) {
+            if (data.data.progress !== 100 && data.data.progress !== 0) {
               _this9.progress();
-            }
+            } else if (data.data.progress === 0) {}
           });
         }
       }]);

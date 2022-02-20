@@ -1720,8 +1720,10 @@ let OrderComponent = class OrderComponent {
             this.progressValue = per;
             this.logs = data.data.logger;
             console.log(data.data.logger);
-            if (data.data.progress !== 100) {
+            if (data.data.progress !== 100 && data.data.progress !== 0) {
                 this.progress();
+            }
+            else if (data.data.progress === 0) {
             }
         });
     }
