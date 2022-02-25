@@ -3456,9 +3456,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.apiService.getStockProgress().subscribe(function (data) {
             console.log(data);
             var per = data.data.progress;
-            _this13.progressValue = per.split('%').join('');
+            _this13.progressValue = per;
 
-            if (data.data.progress !== "100%") {
+            if (data.data.progress !== 100 && data.data.progress !== 0) {
               _this13.stockProgress();
             }
           });

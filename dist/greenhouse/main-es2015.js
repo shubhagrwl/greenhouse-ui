@@ -2121,8 +2121,8 @@ let StockComponent = class StockComponent {
         this.apiService.getStockProgress().subscribe((data) => {
             console.log(data);
             var per = data.data.progress;
-            this.progressValue = per.split('%').join('');
-            if (data.data.progress !== "100%") {
+            this.progressValue = per;
+            if (data.data.progress !== 100 && data.data.progress !== 0) {
                 this.stockProgress();
             }
         });
