@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
   gridOptions: GridOptions = {
     pagination: true,
     rowModelType: "infinite",
-    cacheBlockSize: 100,
+    cacheBlockSize: 10,
     paginationPageSize: 100,
   };
   rowData;
@@ -76,9 +76,9 @@ export class UserComponent implements OnInit {
       }
       this.apiService.getAllUsers().subscribe((data: any) => {
         console.log(data);
+        this.gridOptions.paginationPageSize = data.data.length
         this.rowData = data.data;
         params.successCallback(data.data);
-
       }, err => {
         this.apiService.openSnackBar(err.error.data.message, "Close");
       })

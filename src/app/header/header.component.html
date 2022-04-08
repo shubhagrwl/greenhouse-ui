@@ -22,10 +22,10 @@
                 <a class="nav-link" routerLink="order">ORDER PROCESSING</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="date">DATE UPDATER </a>
+                <a class="nav-link" (click)= "refreshComponent()" routerLink="date">DATE UPDATER </a>
             </li>
             <li *ngIf="adminFlag" class="nav-item">
-                <a class="nav-link" routerLink="user">ADMIN</a>
+                <a class="nav-link" (click)= "refreshComponent()"routerLink="user">ADMIN</a>
             </li>
         </ul>
     </div>

@@ -22,6 +22,10 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  reloadCurrentPage() {
+    window.location.reload();
+   }
+
   logout() {
     localStorage.setItem('token', null);
     this.router.navigate(['/']);
