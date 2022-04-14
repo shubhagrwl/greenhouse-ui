@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.apiService.login(this.loginForm.value).subscribe((data: any) => {
-      console.log(data);
       localStorage.setItem('token', data.data.token);
       const token: any = jwt_decode(data.data.token);
       localStorage.setItem("userData", JSON.stringify(token))

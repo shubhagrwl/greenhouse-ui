@@ -16,8 +16,7 @@
                 <div class="form-group">
                     <label for="file">FILE</label><br>
                     <input type="file" id="fileMaster" (change)="onFilechange($event)"><br>
-                    <span>Files must be .csv, containing at minimum, columns with headings: "Driver Name", "Stop Number"
-                        (0 & 999 are Nashua), "Visit Name", "Order" (containing an order number), and "Phone"</span>
+                    <span>Files must be *.csv, containing FOUR columns.  Column 1: "Driver Name", Column 2: "Stop Number" (0 & 999 are assumed to be Nashua), Column 3: "Visit Name" (must exactly match Customer Name in Dear), Column 4: "Order" (containing an order number that is either the Order number in Dear that starts with “G” or the numeric order number from Shopify that appears in the Customer Reference field in Dear).</span>
                 </div>
 
             </div>
@@ -43,8 +42,7 @@
                 <div class="form-group">
                     <label for="file">FILE</label><br>
                     <input type="file" id="filePrint" (change)="onFilechange($event)"><br>
-                    <span>Files must be .csv, containing at minimum, columns with headings: "Driver Name", "Stop Number"
-                        (0 & 999 are Nashua), "Visit Name", "Order" (containing an order number), and "Phone"</span>
+                    <span>Files must be *.csv, containing FOUR columns.  Column 1: "Driver Name", Column 2: "Stop Number" (0 & 999 are assumed to be Nashua), Column 3: "Visit Name" (must exactly match Customer Name in Dear), Column 4: "Order" (containing an order number that is either the Order number in Dear that starts with “G” or the numeric order number from Shopify that appears in the Customer Reference field in Dear).</span>
                 </div>
 
             </div>
