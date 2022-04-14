@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders, HttpRequest } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
 import { MatSnackBar } from "@angular/material";
 import { environment } from "src/environments/environment";
 import { map } from 'rxjs/operators';
@@ -10,22 +10,39 @@ const httpOptions = {
   }),
 };
 
+
+ function getToken(){
+  let token = localStorage.getItem("token");
+
+  if(token){
+    // window.location.reload();
+    token = localStorage.getItem("token");
+  }
+  console.log(token, 'test');
+  return token;
+} 
+
 const headerOption = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
-    Authorization: `Bearer ${localStorage.getItem("token")}`,
+    Authorization: `Bearer ${getToken()}`,
   }),
 };
 @Injectable({
   providedIn: "root",
 })
-export class ApiService {
+export class ApiService  implements OnInit{
   BASE_URL = environment.BASE_URL;
+  token = localStorage.getItem("token");
 
   constructor(
     private httpClient: HttpClient,
     public matSnackBar: MatSnackBar
   ) { }
+  ngOnInit(): void {
+    window.location.reload();
+    this.token = localStorage.getItem("token");
+  }
 
   openSnackBar(message: string, action: string) {
     this.matSnackBar.open(message, action ? action : undefined, {
@@ -103,9 +120,14 @@ export class ApiService {
   }
 
   getAllUsers() {
+    console.log(this.token)
     return this.httpClient.get(`${this.BASE_URL}/users`, {
-      headers: headerOption.headers,
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${this.token}`,
+      }),
     });
+    
   }
 
   getStock(params) {
@@ -122,7 +144,7 @@ export class ApiService {
   }
 
   userUpdate(params) {
-    return this.httpClient.post(
+    return this.httpClient.patch(
       `${this.BASE_URL}/user`,
       params,
       headerOption

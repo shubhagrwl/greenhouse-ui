@@ -419,7 +419,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div>\n    <div style=\"height: 70px; text-align: center;\">\n        <img style=\"height: 70px; width: 50px;\"\n            src=\"https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719\"\n            alt=\"\"><br>\n        <span>Plantit</span><br>\n    </div>\n    <div style=\"text-align: right; margin-right: 15px;\">\n        <a (click)=\"logout()\">LOG OUT</a><br>\n        <span>{{username}}</span>\n    </div>\n</div>\n\n\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"container-fluid\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"stock\">STOCK CONTROL</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"order\">ORDER PROCESSING</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"date\">DATE UPDATER </a>\n            </li>\n            <li *ngIf=\"adminFlag\" class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"user\">ADMIN</a>\n            </li>\n        </ul>\n    </div>\n</nav>\n\n<!-- <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"stock\">Stock</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"order\">Order</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"date\">Date</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"user\">Users</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"right\"><i class=\"fas fa-sign-out-alt\"></i></a>\n            </li>\n        </ul>\n    </div>\n</nav> -->";
+    __webpack_exports__["default"] = "<div>\n    <div style=\"height: 70px; text-align: center;\">\n        <img style=\"height: 70px; width: 50px;\"\n            src=\"https://cdn.shopify.com/s/files/1/0081/2285/9605/files/greenhouse-logo.svg?v=11777566451454855719\"\n            alt=\"\"><br>\n        <span>Plantit</span><br>\n    </div>\n    <div style=\"text-align: right; margin-right: 15px;\">\n        <a (click)=\"logout()\">LOG OUT</a><br>\n        <span>{{username}}</span>\n    </div>\n</div>\n\n\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"container-fluid\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"stock\">STOCK CONTROL</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"order\">ORDER PROCESSING</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" (click)= \"refreshComponent()\" routerLink=\"date\">DATE UPDATER </a>\n            </li>\n            <li *ngIf=\"adminFlag\" class=\"nav-item\">\n                <a class=\"nav-link\" (click)= \"refreshComponent()\"routerLink=\"user\">ADMIN</a>\n            </li>\n        </ul>\n    </div>\n</nav>\n\n<!-- <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" routerLink=\"stock\">Stock</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"order\">Order</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"date\">Date</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"user\">Users</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"right\"><i class=\"fas fa-sign-out-alt\"></i></a>\n            </li>\n        </ul>\n    </div>\n</nav> -->";
     /***/
   },
 
@@ -1242,10 +1242,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "Content-Type": "application/json"
       })
     };
+
+    function getToken() {
+      var token = localStorage.getItem("token");
+
+      if (token) {
+        // window.location.reload();
+        token = localStorage.getItem("token");
+      }
+
+      console.log(token, 'test');
+      return token;
+    }
+
     var headerOption = {
       headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
         "Content-Type": "application/json",
-        Authorization: "Bearer ".concat(localStorage.getItem("token"))
+        Authorization: "Bearer ".concat(getToken())
       })
     };
 
@@ -1256,9 +1269,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.httpClient = httpClient;
         this.matSnackBar = matSnackBar;
         this.BASE_URL = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].BASE_URL;
+        this.token = localStorage.getItem("token");
       }
 
       _createClass(ApiService, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          window.location.reload();
+          this.token = localStorage.getItem("token");
+        }
+      }, {
         key: "openSnackBar",
         value: function openSnackBar(message, action) {
           this.matSnackBar.open(message, action ? action : undefined, {
@@ -1358,8 +1378,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getAllUsers",
         value: function getAllUsers() {
+          console.log(this.token);
           return this.httpClient.get("".concat(this.BASE_URL, "/users"), {
-            headers: headerOption.headers
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+              "Content-Type": "application/json",
+              Authorization: "Bearer ".concat(this.token)
+            })
           });
         }
       }, {
@@ -1380,7 +1404,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "userUpdate",
         value: function userUpdate(params) {
-          return this.httpClient.post("".concat(this.BASE_URL, "/user"), params, headerOption);
+          return this.httpClient.patch("".concat(this.BASE_URL, "/user"), params, headerOption);
         }
       }, {
         key: "deleteUser",
@@ -2261,6 +2285,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (this.admin === true) {
             this.adminFlag = true;
           }
+        }
+      }, {
+        key: "reloadCurrentPage",
+        value: function reloadCurrentPage() {
+          window.location.reload();
         }
       }, {
         key: "logout",
@@ -3879,7 +3908,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.gridOptions = {
           pagination: true,
           rowModelType: "infinite",
-          cacheBlockSize: 100,
+          cacheBlockSize: 10,
           paginationPageSize: 100
         };
         this.pageNo = 1;
@@ -3927,6 +3956,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
             _this15.apiService.getAllUsers().subscribe(function (data) {
               console.log(data);
+              _this15.gridOptions.paginationPageSize = data.data.length;
               _this15.rowData = data.data;
               params.successCallback(data.data);
             }, function (err) {
