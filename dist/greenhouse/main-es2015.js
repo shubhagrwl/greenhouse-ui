@@ -879,7 +879,7 @@ let ApiService = class ApiService {
     }
     pickNpack(file, flag) {
         const formData = new FormData();
-        formData.append('master_pick', flag);
+        formData.append('master_pick', 'false');
         formData.append('pp_file', file);
         const req = this.httpClient.post(`${this.BASE_URL}/pickandpack`, formData, {
             reportProgress: true,

@@ -160,7 +160,7 @@ export class ApiService  implements OnInit{
   pickNpack(file, flag): Observable<any> {
     const formData: FormData = new FormData();
 
-    formData.append('master_pick', flag);
+    formData.append('master_pick', 'false');
     formData.append('pp_file', file);
     const req = this.httpClient.post(`${this.BASE_URL}/pickandpack`, formData, {
       reportProgress: true,
