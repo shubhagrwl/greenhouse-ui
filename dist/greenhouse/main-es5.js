@@ -1418,7 +1418,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "pickNpack",
         value: function pickNpack(file, flag) {
           var formData = new FormData();
-          formData.append('master_pick', 'false');
+          formData.append('master_pick', flag);
           formData.append('pp_file', file);
           var req = this.httpClient.post("".concat(this.BASE_URL, "/pickandpack"), formData, {
             reportProgress: true,
@@ -2813,7 +2813,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           if (param === "false") {
             this.loaderFlag = true;
-            this.apiService.pickNpack(this.file, 'true').subscribe(function (data) {
+            this.apiService.pickNpack(this.file, 'false').subscribe(function (data) {
               if (data) {
                 console.log(data.data.code);
 

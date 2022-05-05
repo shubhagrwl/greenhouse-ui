@@ -879,7 +879,7 @@ let ApiService = class ApiService {
     }
     pickNpack(file, flag) {
         const formData = new FormData();
-        formData.append('master_pick', 'false');
+        formData.append('master_pick', flag);
         formData.append('pp_file', file);
         const req = this.httpClient.post(`${this.BASE_URL}/pickandpack`, formData, {
             reportProgress: true,
@@ -1714,7 +1714,7 @@ let OrderComponent = class OrderComponent {
         $("#printUpload").prop('disabled', false);
         if (param === "false") {
             this.loaderFlag = true;
-            this.apiService.pickNpack(this.file, 'true').subscribe((data) => {
+            this.apiService.pickNpack(this.file, 'false').subscribe((data) => {
                 if (data) {
                     console.log(data.data.code);
                     if (data.data.code === 202) {

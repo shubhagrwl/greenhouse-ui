@@ -76,7 +76,7 @@ export class OrderComponent implements OnInit {
     $("#printUpload").prop('disabled', false);
     if (param === "false") {
       this.loaderFlag = true;
-      this.apiService.pickNpack(this.file, 'true').subscribe((data: any) => {
+      this.apiService.pickNpack(this.file, 'false').subscribe((data: any) => {
         if (data) {
           console.log(data.data.code);
           if (data.data.code === 202) {
